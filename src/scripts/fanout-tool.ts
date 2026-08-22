@@ -248,6 +248,7 @@ const normalizeImport = (value: unknown): NormalizedImport => {
     "plan.topic",
     "plan.keyword",
     "plan.query",
+    "data.question",
   ]);
   const branches = unique(
       collectKnown(root, new Set(["branches", "subtopics", "clusters"])),
@@ -267,7 +268,7 @@ const normalizeImport = (value: unknown): NormalizedImport => {
     entities = unique(collectKnown(root, new Set(["entities", "entity"]))),
     intents = unique(collectKnown(root, new Set(["intents", "intent"]))),
     sourceRoles = unique(
-      collectKnown(root, new Set(["sourceroles", "sourceneeds", "sources"])),
+      collectKnown(root, new Set(["sourceroles", "sourceneeds", "sources", "sourcetype"])),
     );
   if (!topic && !branches.length && !questions.length)
     throw new Error(
@@ -281,7 +282,13 @@ const normalizeImport = (value: unknown): NormalizedImport => {
     intents,
     sourceRoles,
     schemaVersion:
-      firstString(root, ["schemaVersion", "schema_version", "version"]) ||
+      firstString(root, [
+        "schemaVersion",
+        "schema_version",
+        "version",
+        "data.plannerVersion",
+        "data.methodVersion",
+      ]) ||
       undefined,
   };
 };

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seo-fanout.com/contracts/ai-fanout-planner-handoff.schema.v1.json",
+  "title": "SEO Fanout consumer contract for an AI Fanout planner result",
+  "description": "SEO Fanout's versioned consumer contract. AI Fanout does not currently publish a versioned planner export or fixture; this schema must not be described as an AI Fanout producer contract.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["data"],
+  "properties": {
+    "data": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["question", "summary", "branches", "modelId", "plannerVersion", "methodVersion", "generatedAt", "notice"],
+      "properties": {
+        "question": { "type": "string", "minLength": 4, "maxLength": 120 },
+        "summary": { "type": "string", "minLength": 20, "maxLength": 320 },
+        "branches": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 8,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["query", "intent", "rationale", "sourceType", "assumption"],
+            "properties": {
+              "query": { "type": "string", "minLength": 4, "maxLength": 180 },
+              "intent": { "enum": ["learn", "compare", "evaluate", "implement", "troubleshoot", "verify"] },
+              "rationale": { "type": "string", "minLength": 12, "maxLength": 260 },
+              "sourceType": { "enum": ["primary documentation", "research paper", "expert guidance", "case study", "comparison data", "community evidence"] },
+              "assumption": { "type": "string", "minLength": 4, "maxLength": 220 }
+            }
+          }
+        },
+        "modelId": { "type": "string", "minLength": 1 },
+        "plannerVersion": { "const": "fanout-planner/1.0.0" },
+        "methodVersion": { "const": "hypothetical-query-fanout/1.0" },
+        "generatedAt": { "type": "string", "format": "date-time" },
+        "notice": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "data": {
+    "question": "How should an SEO team audit query fanout?",
+    "summary": "A synthetic result used only to test the local handoff parser and page-decision workflow.",
+    "branches": [
+      { "query": "Define the primary user job", "intent": "learn", "rationale": "The page decision needs a stable outcome before coverage is reviewed.", "sourceType": "expert guidance", "assumption": "The team can name one primary job." },
+      { "query": "Inventory current canonical owners", "intent": "implement", "rationale": "Existing pages must be checked before another URL is proposed.", "sourceType": "primary documentation", "assumption": "The site inventory is accessible." },
+      { "query": "Map claims to evidence roles", "intent": "verify", "rationale": "Each material claim needs an appropriate and maintainable source role.", "sourceType": "research paper", "assumption": "Evidence can be reviewed lawfully." },
+      { "query": "Choose one bounded page action", "intent": "evaluate", "rationale": "The workflow should end in an edit, merge, evidence task, URL, or no action.", "sourceType": "case study", "assumption": "The inventory is complete enough to decide." }
+    ],
+    "modelId": "synthetic-fixture-not-a-provider",
+    "plannerVersion": "fanout-planner/1.0.0",
+    "methodVersion": "hypothetical-query-fanout/1.0",
+    "generatedAt": "2026-08-22T00:00:00.000Z",
+    "notice": "Owner-authored synthetic fixture. Not an AI Fanout export, provider result, demand signal, or benchmark."
+  }
+}

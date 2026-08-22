@@ -1,5 +1,6 @@
 import { chromium } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
+import { readFile } from "node:fs/promises";
 
 const flagIndex = process.argv.indexOf("--base-url");
 const baseUrl = flagIndex >= 0 ? process.argv[flagIndex + 1] : "http://127.0.0.1:4321";
@@ -58,6 +59,21 @@ const [csvDownload] = await Promise.all([
 check(csvDownload.suggestedFilename() === "seo-page-inventory.csv", "CSV download filename incorrect");
 
 await page.goto(new URL("/tool/", baseUrl).toString(), { waitUntil: "networkidle" });
+const handoffFixture = await readFile(
+  new URL("../evidence/ai-fanout-planner-handoff.synthetic.v1.json", import.meta.url),
+  "utf8",
+);
+await page.locator("#fanout-json").fill(handoffFixture);
+await page.getByRole("button", { name: "Use pasted JSON" }).click();
+check(
+  (await page.locator("#import-topic").textContent()) ===
+    "How should an SEO team audit query fanout?",
+  "AI Fanout response-shaped question was not imported",
+);
+check(
+  (await page.locator("#import-branches").textContent()) === "4",
+  "AI Fanout response-shaped branches were not imported",
+);
 await page.getByRole("button", { name: "Continue" }).click();
 await page.getByRole("button", { name: "Continue" }).click();
 await page.getByRole("button", { name: "Continue" }).click();

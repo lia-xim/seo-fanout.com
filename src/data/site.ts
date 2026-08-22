@@ -27,7 +27,7 @@ export const site = {
   navigation: [
     { href: "/tool/", label: "Tool" },
     { href: "/learn/", label: "Learn" },
-
+    { href: "/seo-query-fanout-workflow/", label: "Workflow" },
     { href: "/beispiele/", label: "Examples" },
   ],
 } as const;

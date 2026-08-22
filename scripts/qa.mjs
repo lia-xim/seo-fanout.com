@@ -38,6 +38,8 @@ const routeFiles = new Map([
   ],
   ["/lab/", "lab/index.html"],
   ["/workflow/", "workflow/index.html"],
+  ["/seo-query-fanout-workflow/", "seo-query-fanout-workflow/index.html"],
+  ["/geo-evidence-workflow/", "geo-evidence-workflow/index.html"],
   ["/impressum/", "impressum/index.html"],
   ["/datenschutz/", "datenschutz/index.html"],
   ["/korrekturen/", "korrekturen/index.html"],
@@ -63,7 +65,9 @@ const vercel = JSON.parse(await read("vercel.json")),
   site = await read("src/data/site.ts"),
   tool = await read("src/scripts/fanout-tool.ts"),
   engine = await read("src/lib/decision-engine.ts"),
-  cases = JSON.parse(await read("evidence/validation-cases.json"));
+  cases = JSON.parse(await read("evidence/validation-cases.json")),
+  handoffSchema = JSON.parse(await read("evidence/ai-fanout-planner-handoff.schema.v1.json")),
+  handoffFixture = JSON.parse(await read("evidence/ai-fanout-planner-handoff.synthetic.v1.json"));
 for (const [route, html] of built) {
   pass(html.includes('content="index, follow"'), route + " not indexable");
   pass(
@@ -173,6 +177,27 @@ pass(
   tool.includes("ai_fanout_import") && /file\.size\s*>\s*200000/.test(tool),
   "local AI Fanout import contract missing",
 );
+pass(
+  handoffSchema.properties?.data?.properties?.plannerVersion?.const ===
+    "fanout-planner/1.0.0" &&
+    handoffSchema.properties?.data?.properties?.methodVersion?.const ===
+      "hypothetical-query-fanout/1.0",
+  "AI Fanout consumer contract version mismatch",
+);
+pass(
+  handoffFixture.data?.branches?.length >= 4 &&
+    handoffFixture.data?.branches?.every(
+      (branch) =>
+        branch.query && branch.intent && branch.rationale &&
+        branch.sourceType && branch.assumption,
+    ) &&
+    handoffFixture.data?.notice?.includes("Not an AI Fanout export"),
+  "synthetic handoff fixture invalid or provenance boundary missing",
+);
+pass(
+  tool.includes('"data.question"') && tool.includes('"sourcetype"'),
+  "AI Fanout response-shaped handoff is not parsed",
+);
 const href = /<a\b[^>]*\bhref="([^"]+)"/g;
 for (const [route, html] of built) {
   for (const m of html.matchAll(href)) {
@@ -210,5 +235,5 @@ if (fail.length) {
   process.exit(1);
 }
 console.log(
-  "QA passed: 19 indexable canonical pages, generated sitemap, root/www policy contract, noindex 404, ten validations, four published cases, correction SLA, links and deterministic tool.",
+  "QA passed: 21 indexable canonical pages, generated sitemap, root/www policy contract, noindex 404, ten validations, four published cases, correction SLA, links and deterministic tool.",
 );
