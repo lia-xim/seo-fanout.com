@@ -1,0 +1,39 @@
+---
+import type { ContentEntry } from "../data/content";
+
+interface Props { entry: ContentEntry }
+const { entry } = Astro.props;
+const sectionLabel = entry.kind === "guide" ? "Guide" : "Field note";
+const backHref = entry.kind === "guide" ? "/learn/" : "/blog/";
+const backLabel = entry.kind === "guide" ? "All guides" : "All field notes";
+---
+
+<article class="article-shell">
+  <header class="article-header">
+    <a class="article-back" href={backHref}>← {backLabel}</a>
+    <p class="mono-label">{sectionLabel}{entry.published ? ` · ${entry.published}` : ` · Updated ${entry.updated}`}</p>
+    <h1>{entry.title}</h1>
+    <p class="article-dek">{entry.description}</p>
+    <div class="article-takeaway"><strong>Decision rule</strong><p>{entry.takeaway}</p></div>
+  </header>
+
+  <div class="article-body">
+    <nav class="article-contents" aria-label="On this page">
+      <strong>On this page</strong>
+      {entry.sections.map((section, index) => <a href={`#section-${index + 1}`}>{section.heading}</a>)}
+    </nav>
+    <div class="article-copy">
+      {entry.sections.map((section, index) => (
+        <section id={`section-${index + 1}`}>
+          <h2>{section.heading}</h2>
+          {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+          {section.bullets && <ul>{section.bullets.map((bullet) => <li>{bullet}</li>)}</ul>}
+        </section>
+      ))}
+      <aside class="article-next">
+        <strong>Continue with the work</strong>
+        <a href={entry.next.href}>{entry.next.label} <span aria-hidden="true">→</span></a>
+      </aside>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "domain": "seo-fanout.com",
+  "reviewedAt": "2026-08-22",
+  "canonicalHost": "seo-fanout.com",
+  "rootAction": {
+    "status": 308,
+    "destination": "/tool/"
+  },
+  "wwwAction": {
+    "status": 308,
+    "destination": "https://seo-fanout.com/"
+  },
+  "defaultUnknownPathAction": 404,
+  "catchAllRedirect": false,
+  "indexingState": "crawlable_noindex_preview"
+}

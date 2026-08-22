@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "domain": "seo-fanout.com",
+  "updatedAt": "2026-08-22",
+  "registrationContext": "Newly registered by the current owner on 2026-08-16.",
+  "currentMaterials": [
+    {
+      "kind": "site_code_and_copy",
+      "provenance": "Independently created for the current owner in this repository",
+      "publicReuseLicense": "none"
+    },
+    {
+      "kind": "design_concepts",
+      "provenance": "Generated with OpenAI ImageGen for implementation reference",
+      "publicReuseLicense": "none",
+      "productionUse": "visual reference only"
+    }
+  ],
+  "thirdPartyRightsPolicy": "Use third-party text, images, provider data, outputs, names, and other materials only with an applicable right, license, quotation basis, or permission. Link and summarize only what is necessary; do not reproduce proprietary datasets or user-pasted outputs.",
+  "corrections": "https://github.com/lia-xim/seo-fanout.com/issues"
+}

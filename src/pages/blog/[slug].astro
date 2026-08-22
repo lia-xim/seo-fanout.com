@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ArticlePage from "../../components/ArticlePage.astro";
+import { fieldNotes, type ContentEntry } from "../../data/content";
+
+export function getStaticPaths() {
+  return fieldNotes.map((entry) => ({ params: { slug: entry.slug }, props: { entry } }));
+}
+
+interface Props { entry: ContentEntry }
+const { entry } = Astro.props;
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: entry.title,
+  description: entry.description,
+  datePublished: entry.published,
+  dateModified: entry.updated,
+  author: { "@type": "Organization", name: "Contextter research and product function" },
+};
+---
+
+<BaseLayout title={entry.title} description={entry.description} canonicalPath={`/blog/${entry.slug}/`} pageClass="article-page" structuredData={structuredData}>
+  <ArticlePage entry={entry} />
+</BaseLayout>

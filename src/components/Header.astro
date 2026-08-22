@@ -1,0 +1,42 @@
+---
+import { site } from "../data/site";
+
+const currentPath = Astro.url.pathname;
+const isCurrent = (href: string) => href === "/tool/" ? currentPath === "/" || currentPath.startsWith("/tool") : currentPath.startsWith(href);
+---
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/tool/" aria-label="SEO Fan-out Explorer, tool">
+      <svg class="brand-mark" viewBox="0 0 44 34" aria-hidden="true">
+        <circle cx="5" cy="17" r="2.5" />
+        <circle cx="38" cy="5" r="2.5" />
+        <circle cx="38" cy="17" r="2.5" />
+        <circle cx="38" cy="29" r="2.5" />
+        <path d="M7.5 17H15M15 17 27 5h8.5M15 17h20.5M15 17l12 12h8.5" />
+      </svg>
+      <span>SEO FAN-OUT</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      {site.navigation.map((item) => (
+        <a href={item.href} aria-current={isCurrent(item.href) ? "page" : undefined}>{item.label}</a>
+      ))}
+    </nav>
+
+    <a class="header-action" href="/tool/#explorer">Start a decision</a>
+
+    <details class="mobile-nav">
+      <summary aria-label="Open navigation">
+        <span></span><span></span><span></span>
+      </summary>
+      <nav aria-label="Mobile navigation">
+        {site.navigation.map((item) => (
+          <a href={item.href} aria-current={isCurrent(item.href) ? "page" : undefined}>{item.label}</a>
+        ))}
+        <a href="/blog/" aria-current={currentPath.startsWith("/blog/") ? "page" : undefined}>Field notes</a>
+        <a href="/workflow/" aria-current={currentPath.startsWith("/workflow/") ? "page" : undefined}>Workflow</a>
+      </nav>
+    </details>
+  </div>
+</header>

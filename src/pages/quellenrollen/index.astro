@@ -1,0 +1,56 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const roles = [
+  ["Official definition", "Set terms, scope, rules, or policy", "Standard, regulator, product owner, maintained primary documentation", "Treating a summary or search snippet as the authority"],
+  ["Primary specification", "Verify current capabilities, limits, prices, or requirements", "Vendor documentation, public tariff, release note, contract, schema", "Mixing dates, plans, markets, or versions"],
+  ["Firsthand evaluation", "Show what happened under stated conditions", "Named reviewer, method, date, setup, observations, raw notes where lawful", "Calling an unrepeatable impression a test"],
+  ["Reproducible test", "Distinguish causes or verify behavior", "Inputs, environment, steps, expected result, observed result, limitations", "Reporting one green run as universal proof"],
+  ["Original dataset", "Measure a bounded population", "Collection method, fields, sample, exclusions, license, version", "Publishing percentages without a denominator"],
+  ["Qualified expert", "Interpret a domain with accountable judgment", "Named expertise, scope, conflicts, evidence trail", "Invented authority or anonymous AI synthesis"],
+  ["User evidence", "Understand real jobs, constraints, and language", "Consented interviews, support themes, surveys, Search Console or analytics context", "Retaining confidential inputs without purpose and consent"],
+  ["Decision method", "Make trade-offs explicit", "Criteria, weighting, disqualifiers, date, reviewer, counterexamples", "Declaring a universal winner"],
+  ["Correction log", "Keep the result current and accountable", "Version, change, reason, evidence, reviewer, date", "Silently rewriting the method"],
+] as const;
+---
+
+<BaseLayout
+  title="Source roles"
+  description="A practical taxonomy for choosing the evidence role each SEO Fan-out branch needs."
+  canonicalPath="/quellenrollen/"
+  pageClass="reference-page"
+>
+  <header class="reference-hero">
+    <p class="mono-label">Reference taxonomy</p>
+    <h1>Match the source to the claim.</h1>
+    <p>A fan-out branch does not automatically need another article. It may need a specification, test, dataset, expert, correction log, or no publication at all.</p>
+  </header>
+
+  <section class="reference-section">
+    <div class="section-heading">
+      <p class="mono-label">Nine roles</p>
+      <h2>Evidence has a job before it has a format.</h2>
+    </div>
+    <div class="role-ledger">
+      {roles.map(([name, job, proof, failure], index) => (
+        <article>
+          <span class="role-number">{String(index + 1).padStart(2, "0")}</span>
+          <h3>{name}</h3>
+          <dl>
+            <div><dt>Use it to</dt><dd>{job}</dd></div>
+            <div><dt>Minimum proof</dt><dd>{proof}</dd></div>
+            <div><dt>Failure mode</dt><dd>{failure}</dd></div>
+          </dl>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="reference-section action-band">
+    <div>
+      <p class="mono-label">Working rule</p>
+      <h2>If the missing thing is evidence, create evidence—not another page.</h2>
+    </div>
+    <a class="button-link" href="/tool/#explorer">Run the map <span aria-hidden="true">→</span></a>
+  </section>
+</BaseLayout>

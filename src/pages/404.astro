@@ -1,24 +1,20 @@
 ---
-import { site } from "../data/site";
-import "../styles/global.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<!doctype html>
-<html lang={site.language}>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="robots" content="noindex, nofollow, noarchive" />
-    <title>Not found | {site.domain}</title>
-  </head>
-  <body>
-    <main>
-      <div class="eyebrow">{site.domain}</div>
-      <h1>Page not found</h1>
-      <p class="purpose">Only the project setup page exists at the moment.</p>
-      <div class="actions"><a href="/">Return to the project setup</a></div>
-    </main>
-  </body>
-</html>
-
-
+<BaseLayout
+  title="Page not found"
+  description="The requested path is not part of the SEO Fan-out Explorer."
+  canonicalPath="/404/"
+  pageClass="reference-page error-page"
+>
+  <section class="error-sheet">
+    <p class="mono-label">404 · Page not found</p>
+    <h1>This branch has no destination.</h1>
+    <p>This address is not part of the current site. Unknown routes remain a real 404 instead of being redirected to an unrelated page.</p>
+    <div class="error-actions">
+      <a class="button-link" href="/tool/">Open the Explorer <span aria-hidden="true">→</span></a>
+      <a class="text-link" href="/methodik/">Read the method</a>
+    </div>
+  </section>
+</BaseLayout>

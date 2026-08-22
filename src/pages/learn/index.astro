@@ -1,0 +1,46 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { guides, fieldNotes } from "../../data/content";
+---
+
+<BaseLayout title="Learn SEO fan-out" description="A structured learning path for SEO fan-out, page ownership, evidence roles, and conservative content decisions." canonicalPath="/learn/" pageClass="learn-page">
+  <header class="knowledge-hero">
+    <h1>Learn fan-out without the folklore.</h1>
+    <p>A practical path from one user job to one defensible page decision.</p>
+  </header>
+
+  <section class="knowledge-index" aria-labelledby="start-title">
+    <h2 id="start-title">Start with the decision</h2>
+    <div class="editorial-rows">
+      {guides.map((guide, index) => (
+        <a href={`/learn/${guide.slug}/`}>
+          <span class="row-index">0{index + 1}</span>
+          <strong>{guide.title}</strong>
+          <span>{guide.description}</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" /></svg>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="evidence-band" aria-labelledby="evidence-band-title">
+    <div><h2 id="evidence-band-title">Evidence before output</h2><p>Use the right artifact to earn the right decision.</p></div>
+    <a href="/methodik/"><strong>Method</strong><span>The exact rule path and limits.</span><b aria-hidden="true">→</b></a>
+    <a href="/quellenrollen/"><strong>Source roles</strong><span>What should validate each claim.</span><b aria-hidden="true">→</b></a>
+    <a href="/entscheidungen/"><strong>Page decisions</strong><span>Five endings for the research.</span><b aria-hidden="true">→</b></a>
+  </section>
+
+  <section class="knowledge-index field-note-preview" aria-labelledby="notes-title">
+    <div class="index-heading"><h2 id="notes-title">Field notes</h2><a href="/blog/">See all field notes →</a></div>
+    <div class="editorial-rows compact-rows">
+      {fieldNotes.map((note) => (
+        <a href={`/blog/${note.slug}/`}>
+          <strong>{note.title}</strong>
+          <span>{note.description}</span>
+          <time datetime={note.published}>{note.published}</time>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" /></svg>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

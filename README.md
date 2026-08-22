@@ -1,46 +1,38 @@
 # seo-fanout.com
 
-Public source repository for the future `seo-fanout.com` website.
+Public source repository for seo-fanout.com, a standalone deterministic Fan-out Explorer and learning resource.
 
-## Current state
+## Product
 
-Repository and Vercel foundation only. The planned public tool, reference, service, or publication is not launched on the custom domain yet. The temporary deployment is deliberately excluded from indexing.
+The free browser-local tool turns one keyword, topic, or page question into a bounded user job, relevant subquestions, evidence needs, and exactly one priority: strengthen, consolidate, create a page, create evidence first, or take no action. It does not call a model or search provider, expose hidden queries, or create indexable pages for variations.
 
-## Standalone purpose
+The site is a newly registered project of Matthias Ramahi. Contextter is an optional manually connected workflow from the same operator, not independent corroboration.
 
-The planned tool will help decide whether to improve, consolidate, create or avoid a page. Its useful output must remain available without signup.
+## Current launch state
 
-## Current status
+The custom domain is live as a crawlable public preview. Every HTML route stays `noindex, follow`; the sitemap remains empty until Matthias explicitly approves indexing. No analytics, cookies, remote fonts, contact forms, server-side tool storage, or paid APIs are enabled.
 
-Build foundation. The public Fan-out Explorer is not available yet.
+## Routes
 
-## Hard boundary
+- `/tool/` — canonical free decision tool
+- `/` — permanent redirect to `/tool/`
+- `/learn/`, `/blog/` — guides and field notes
+- `/methodik/`, `/quellenrollen/`, `/entscheidungen/` — transparent method and reference
+- `/beispiele/` — case-validation register
+- `/workflow/` — optional manual Contextter handoff
+- `/impressum/`, `/datenschutz/` — operator and privacy information
 
-The tool must not claim access to hidden search or model queries and must not generate one indexable page per variation.
+The optional `/lab/` surface compares only user-pasted visible answer structure in one browser session. It is not a copy of the separate AI-Fanout Evidence Lab: it performs no provider retrieval, monitoring, longitudinal evidence collection, factual scoring, or hidden-process inference.
 
-Primary portfolio relationship: `Contextter (accepted)`.
-
-## Local development
+## Development
 
 ```bash
 corepack pnpm install
-corepack pnpm dev
-```
-
-Verification:
-
-```bash
 corepack pnpm verify
 ```
 
-## Deployment
-
 Vercel project: `seo-fanout-com`.
-
-The placeholder carries both a robots exclusion and an `X-Robots-Tag`. Remove those only when the real site passes its strategy, rights, disclosure, quality, and launch gates. Connecting the custom domain and changing DNS are separate operations.
 
 ## Rights
 
-This repository is public for operational transparency. No license to reuse former-site content, identities, brands, media, datasets, code, subscribers, customers, or other third-party material is granted. No open-source license is granted unless a later commit adds one explicitly.
-
-
+Site code and copy were created for this project. Third-party text, images, provider data, outputs, names, and other materials may be used only where an applicable right, license, quotation basis, or permission exists. User-pasted and exported tool data is not collected by this implementation. No open-source license is granted unless a later commit adds one.

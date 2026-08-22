@@ -1,0 +1,193 @@
+<section class="tool-hero" aria-labelledby="tool-title">
+  <h1 id="tool-title">One question. One clear page decision.</h1>
+  <p>Decide whether to strengthen, consolidate, create, gather evidence—or stop before another URL adds noise.</p>
+  <div class="hero-actions">
+    <a class="primary-action" href="#explorer">Start a decision</a>
+    <a class="quiet-action" href="#how-it-works">
+      <span>See how it works</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" /></svg>
+    </a>
+  </div>
+</section>
+
+<section class="explorer" id="explorer" aria-labelledby="explorer-heading">
+  <h2 class="visually-hidden" id="explorer-heading">Build a deterministic page decision</h2>
+
+  <div class="explorer-workspace">
+    <div class="wizard-side">
+      <div id="wizard-flow">
+        <div class="wizard-heading">
+          <strong>Page decision</strong>
+          <output id="step-status" aria-live="polite">Step 1 of 4</output>
+        </div>
+
+        <ol class="wizard-progress" aria-label="Decision progress">
+          <li class="is-active" data-progress-step="1" aria-current="step"><span>1</span><span class="visually-hidden">Topic</span></li>
+          <li data-progress-step="2"><span>2</span><span class="visually-hidden">User job</span></li>
+          <li data-progress-step="3"><span>3</span><span class="visually-hidden">Coverage</span></li>
+          <li data-progress-step="4"><span>4</span><span class="visually-hidden">Evidence</span></li>
+        </ol>
+
+        <form class="wizard-form" id="fanout-form" autocomplete="off">
+          <section class="wizard-panel" data-wizard-step="1" aria-labelledby="step-1-title">
+            <h3 id="step-1-title">What are you deciding about?</h3>
+            <p>Enter a topic, user question, or existing page promise.</p>
+            <label class="visually-hidden" for="topic">Topic or page question</label>
+            <textarea id="topic" name="topic" maxlength="160" required aria-describedby="topic-count">How to choose a project management tool</textarea>
+            <div class="field-meta">
+              <span>Be specific enough to describe one real user job.</span>
+              <output id="topic-count" for="topic">39 / 160</output>
+            </div>
+            <div class="wizard-actions wizard-actions-forward">
+              <button class="primary-button" type="button" data-next-step="2">Continue</button>
+            </div>
+          </section>
+
+          <section class="wizard-panel" data-wizard-step="2" aria-labelledby="step-2-title" hidden>
+            <h3 id="step-2-title">What is the primary user job?</h3>
+            <p>Choose the outcome the page should help someone reach.</p>
+            <label for="job">Primary user job</label>
+            <select id="job" name="job">
+              <option value="learn">Understand a topic</option>
+              <option value="compare">Compare options</option>
+              <option value="choose" selected>Choose an option</option>
+              <option value="act">Complete a task</option>
+              <option value="troubleshoot">Solve a problem</option>
+            </select>
+            <div class="wizard-actions">
+              <button class="back-button" type="button" data-prev-step="1">Back</button>
+              <button class="primary-button" type="button" data-next-step="3">Continue</button>
+            </div>
+          </section>
+
+          <section class="wizard-panel" data-wizard-step="3" aria-labelledby="step-3-title" hidden>
+            <h3 id="step-3-title">Does a page already own this job?</h3>
+            <p>Describe the current page inventory before adding another URL.</p>
+            <label for="coverage">Existing coverage</label>
+            <select id="coverage" name="coverage">
+              <option value="none">No existing page</option>
+              <option value="partial" selected>One page covers part of the job</option>
+              <option value="substantial">One page substantially covers it</option>
+              <option value="overlap">Several pages overlap</option>
+              <option value="unknown">Coverage is not inventoried</option>
+            </select>
+            <div class="wizard-actions">
+              <button class="back-button" type="button" data-prev-step="2">Back</button>
+              <button class="primary-button" type="button" data-next-step="4">Continue</button>
+            </div>
+          </section>
+
+          <section class="wizard-panel" data-wizard-step="4" aria-labelledby="step-4-title" hidden>
+            <h3 id="step-4-title">What evidence is ready?</h3>
+            <p>The rule stays conservative when the supporting evidence is weak.</p>
+            <label for="evidence">Evidence on hand</label>
+            <select id="evidence" name="evidence">
+              <option value="none">No evidence collected</option>
+              <option value="secondary">Secondary sources only</option>
+              <option value="primary" selected>Primary or firsthand evidence</option>
+              <option value="observed">Observed data or reproducible test</option>
+            </select>
+            <div class="wizard-actions">
+              <button class="back-button" type="button" data-prev-step="3">Back</button>
+              <button class="primary-button" type="submit">Get decision</button>
+            </div>
+          </section>
+        </form>
+
+        <p class="local-note">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2" /><path d="M8 10V7a4 4 0 0 1 8 0v3" /></svg>
+          Runs locally in your browser. Nothing is retained.
+        </p>
+      </div>
+
+      <section class="input-summary" id="input-summary" aria-labelledby="input-summary-title" hidden>
+        <div class="summary-heading">
+          <h3 id="input-summary-title">Your inputs</h3>
+          <span class="complete-state">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" /><path d="m8 12 2.6 2.6L16.5 9" /></svg>
+            4 inputs reviewed
+          </span>
+        </div>
+        <dl>
+          <div><dt>Topic</dt><dd id="summary-topic"></dd></div>
+          <div><dt>User job</dt><dd id="summary-job"></dd></div>
+          <div><dt>Coverage</dt><dd id="summary-coverage"></dd></div>
+          <div><dt>Evidence</dt><dd id="summary-evidence"></dd></div>
+        </dl>
+        <button class="text-button" type="button" id="edit-inputs">Edit inputs</button>
+      </section>
+    </div>
+
+    <aside class="decision-region" aria-live="polite">
+      <div class="decision-empty" id="decision-empty">
+        <svg viewBox="0 0 80 80" aria-hidden="true">
+          <rect x="22" y="12" width="36" height="52" rx="8" />
+          <path d="M31 27h18M31 38h18M31 49h11" />
+        </svg>
+        <h3>Your decision will appear here</h3>
+        <p>Four inputs. One bounded next move.</p>
+      </div>
+
+      <div class="decision-result" id="decision-result" hidden>
+        <p class="decision-ready-mobile">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" /><path d="m8 12 2.6 2.6L16.5 9" /></svg>
+          <span><strong>Decision ready</strong><small>4 inputs reviewed</small></span>
+        </p>
+        <p class="decision-code" id="decision-code">D-01</p>
+        <h2 id="decision-title">Strengthen this page</h2>
+        <p class="decision-rationale" id="decision-rationale">The user job already has a home. Close the evidence and question gaps there.</p>
+        <div class="next-move-box">
+          <strong>Next move</strong>
+          <p id="next-move-detail">Update the existing page. Do not create a sibling URL for these branches.</p>
+        </div>
+        <button class="reasoning-toggle" type="button" id="toggle-reasoning" aria-expanded="false" aria-controls="result-details">
+          <span>View reasoning</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+        </button>
+        <div class="result-actions">
+          <button type="button" id="copy-result">Copy result</button>
+          <button type="button" id="export-result">Export JSON</button>
+        </div>
+        <button class="text-button edit-inputs-mobile" type="button" id="edit-inputs-mobile">Edit inputs</button>
+        <output class="action-status" id="action-status" aria-live="polite"></output>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="result-details" id="result-details" aria-labelledby="result-heading" hidden>
+  <div class="result-heading">
+    <p class="mono-label">Transparent reasoning</p>
+    <h2 id="result-heading">See exactly how the decision was bounded.</h2>
+    <p>These are planning prompts, not reconstructed search queries or model reasoning.</p>
+  </div>
+  <div class="result-ledger">
+    <section><h3>Goal</h3><p id="goal-detail"></p></section>
+    <section><h3>Entities to resolve</h3><ul id="entities-detail"></ul></section>
+    <section><h3>Questions to answer</h3><ol id="questions-detail"></ol></section>
+    <section><h3>Source roles</h3><ul id="roles-detail"></ul></section>
+    <section class="gap-ledger"><h3>Evidence gaps</h3><ul id="gaps-detail"></ul></section>
+  </div>
+</section>
+
+<section class="decision-principle" id="how-it-works" aria-labelledby="principle-title">
+  <div>
+    <h2 id="principle-title">Why the decision comes first</h2>
+    <p>Fan-out is useful only when it reduces unnecessary work. The framework checks page ownership and evidence before it recommends another URL.</p>
+  </div>
+  <ol>
+    <li><span>01</span><strong>Declare the job</strong><p>Start with one outcome, not a list of keywords.</p></li>
+    <li><span>02</span><strong>Check what exists</strong><p>Existing coverage can block or merge a new page.</p></li>
+    <li><span>03</span><strong>Choose one move</strong><p>Improve, consolidate, create, gather evidence, or stop.</p></li>
+  </ol>
+  <a href="/methodik/">Read the transparent method <span aria-hidden="true">→</span></a>
+</section>
+
+<section class="workflow-handoff" aria-labelledby="handoff-title">
+  <div><p class="mono-label">Optional next workflow · same operator</p><h2 id="handoff-title">Carry the decision into real site evidence.</h2></div>
+  <div><p>The exported result can become a planning reference beside your keyword inventory, Search Console context, and Site Audit evidence. The current Contextter handoff is manual; there is no automatic sync.</p><a href="/workflow/">See the transparent Contextter workflow <span aria-hidden="true">→</span></a></div>
+</section>
+
+<script>
+  import "../scripts/fanout-tool";
+</script>

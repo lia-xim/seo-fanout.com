@@ -1,0 +1,49 @@
+---
+import "@fontsource-variable/inter";
+import { site } from "../data/site";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalPath?: string;
+  pageClass?: string;
+  structuredData?: Record<string, unknown>;
+}
+
+const {
+  title = site.title,
+  description = site.description,
+  canonicalPath = Astro.url.pathname,
+  pageClass = "",
+  structuredData,
+} = Astro.props;
+
+const canonical = new URL(canonicalPath, site.origin).toString();
+const robots = site.indexable ? "index, follow" : "noindex, follow, noarchive";
+---
+
+<!doctype html>
+<html lang={site.language}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="robots" content={robots} />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <title>{title === site.title ? title : `${title} | ${site.title}`}</title>
+    {structuredData && <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />}
+  </head>
+  <body class={pageClass}>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <Header />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

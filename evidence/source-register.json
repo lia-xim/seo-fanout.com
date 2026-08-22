@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "domain": "seo-fanout.com",
+  "verifiedAt": "2026-08-22",
+  "sources": [
+    {
+      "id": "google-ai-mode-2025-03",
+      "type": "primary_public_source",
+      "url": "https://blog.google/products-and-platforms/products/search/ai-mode-search/",
+      "supports": "Google publicly describes query fan-out across subtopics and data sources.",
+      "limits": "Does not expose hidden queries for this tool to reproduce."
+    },
+    {
+      "id": "google-io-ai-mode-2025-05",
+      "type": "primary_public_source",
+      "url": "https://blog.google/products-and-platforms/products/search/google-search-ai-mode-update/",
+      "supports": "Google describes breaking questions into subtopics and issuing multiple queries.",
+      "limits": "The SEO Fan-out framework is a separate deterministic planning model."
+    },
+    {
+      "id": "domainportfolio-dossier",
+      "type": "owner_strategy_record",
+      "path": "C:/Users/matth/Documents/DomainPortfolio/strategy/domains/seo-fanout.com.md",
+      "supports": "Accepted purpose, identity, boundaries, operating model, and launch state."
+    },
+    {
+      "id": "rdap-registration-2026-08-16",
+      "type": "registration_evidence",
+      "path": "C:/Users/matth/Documents/DomainPortfolio/reports/owned-domain-rebuild/evidence-2026-08-22.json",
+      "supports": "RDAP records creation on 2026-08-16; bounded archive evidence found zero successful historical HTML URLs.",
+      "limits": "The report path is retained as evidence provenance, not as a rebuild classification."
+    },
+    {
+      "id": "operator-imprint",
+      "type": "operator_primary_source",
+      "url": "https://matthiasramahi.de/impressum.html",
+      "supports": "Current operator name, postal address, email, telephone, and editorial responsibility."
+    },
+    {
+      "id": "vercel-privacy",
+      "type": "processor_primary_source",
+      "url": "https://vercel.com/legal/privacy-policy",
+      "supports": "Hosting provider privacy information."
+    },
+    {
+      "id": "vercel-dpa",
+      "type": "processor_primary_source",
+      "url": "https://vercel.com/legal/dpa",
+      "supports": "Vercel data processing and transfer terms."
+    }
+  ]
+}

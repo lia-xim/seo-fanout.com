@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "domain": "seo-fanout.com",
+  "reviewedAt": "2026-08-22",
+  "historicalPhase": "fresh_domain",
+  "evidenceSummary": "No successful historical HTML URL was observed in the bounded Wayback/recovery evidence. No paid backlink-target run was executed.",
+  "defaultUnknownPathAction": "404",
+  "catchAllRedirect": false,
+  "actions": []
+}

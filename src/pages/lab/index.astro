@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import AIOutputLab from "../../components/AIOutputLab.astro";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "AI Output Comparison Lab",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Any",
+  browserRequirements: "JavaScript enabled",
+  isAccessibleForFree: true,
+  description: "A browser-local lab for comparing observable properties of pasted AI final answers.",
+};
+---
+
+<BaseLayout title="AI Output Comparison Lab" description="Compare visible final answers from ChatGPT, Claude, Gemini, Perplexity, or other AI tools using transparent browser-local text measures." canonicalPath="/lab/" pageClass="lab-page" structuredData={structuredData}>
+  <AIOutputLab />
+</BaseLayout>
