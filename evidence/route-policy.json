@@ -13,5 +13,5 @@
   },
   "defaultUnknownPathAction": 404,
   "catchAllRedirect": false,
-  "indexingState": "crawlable_noindex_preview"
+  "indexingState": "indexable_launch"
 }

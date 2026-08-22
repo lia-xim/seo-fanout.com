@@ -10,7 +10,7 @@ The site is a newly registered project of Matthias Ramahi. Contextter is an opti
 
 ## Current launch state
 
-The custom domain is live as a crawlable public preview. Every HTML route stays `noindex, follow`; the sitemap remains empty until Matthias explicitly approves indexing. No analytics, cookies, remote fonts, contact forms, server-side tool storage, or paid APIs are enabled.
+The custom domain is live and indexable. Canonical HTML routes use `index, follow`; the real 404 remains `noindex`. An automatic Astro sitemap discovers static canonical pages and excludes the redirected root and 404. No analytics, cookies, remote fonts, contact forms, server-side tool storage, or paid APIs are enabled.
 
 ## Routes
 
@@ -20,7 +20,7 @@ The custom domain is live as a crawlable public preview. Every HTML route stays 
 - `/methodik/`, `/quellenrollen/`, `/entscheidungen/` — transparent method and reference
 - `/beispiele/` — case-validation register
 - `/workflow/` — optional manual Contextter handoff
-- `/impressum/`, `/datenschutz/` — operator and privacy information
+- `/impressum/`, `/datenschutz/`, `/korrekturen/` — operator, privacy, and correction SLA
 
 The optional `/lab/` surface compares only user-pasted visible answer structure in one browser session. It is not a copy of the separate AI-Fanout Evidence Lab: it performs no provider retrieval, monitoring, longitudinal evidence collection, factual scoring, or hidden-process inference.
 

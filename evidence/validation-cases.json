@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-22",
+  "methodVersion": "0.1.0",
+  "sources": [
+    "https://seo-fanout.com/sitemap.xml",
+    "https://contextter.com/sitemap.xml",
+    "https://matthiasramahi.de/sitemap.xml"
+  ],
+  "disclosure": "All inventories are first-party or commonly owned and are not independent endorsements.",
+  "cases": [
+    {
+      "id": "sf-root-tool",
+      "publish": true,
+      "site": "seo-fanout.com",
+      "topic": "Primary SEO Fan-out tool entry",
+      "job": "act",
+      "coverage": "overlap",
+      "evidence": "observed",
+      "decision": "consolidate",
+      "urls": [
+        "https://seo-fanout.com/",
+        "https://seo-fanout.com/tool/"
+      ],
+      "finding": "Both paths previously served the same tool. The root now returns 308 to the self-canonical /tool/ URL.",
+      "limits": "Routing evidence only; no search-performance outcome claimed."
+    },
+    {
+      "id": "sf-definition",
+      "publish": true,
+      "site": "seo-fanout.com",
+      "topic": "What SEO fan-out means on this site",
+      "job": "learn",
+      "coverage": "partial",
+      "evidence": "primary",
+      "decision": "strengthen",
+      "urls": [
+        "https://seo-fanout.com/learn/what-seo-fan-out-means-here/",
+        "https://seo-fanout.com/methodik/"
+      ],
+      "finding": "The guide already owns the learning job. Source context belongs there instead of a new definition page.",
+      "limits": "First-party method evidence, not independent validation."
+    },
+    {
+      "id": "sf-content-plan",
+      "publish": false,
+      "site": "seo-fanout.com",
+      "topic": "Why query fan-out is not a content plan",
+      "job": "learn",
+      "coverage": "substantial",
+      "evidence": "primary",
+      "decision": "no_action",
+      "urls": [
+        "https://seo-fanout.com/learn/query-fan-out-is-not-a-content-plan/"
+      ],
+      "finding": "One guide already answers the bounded job.",
+      "limits": "No ranking or demand outcome claimed."
+    },
+    {
+      "id": "sf-output-compare",
+      "publish": false,
+      "site": "seo-fanout.com",
+      "topic": "Compare visible AI answer structure",
+      "job": "act",
+      "coverage": "substantial",
+      "evidence": "observed",
+      "decision": "no_action",
+      "urls": [
+        "https://seo-fanout.com/lab/",
+        "https://seo-fanout.com/blog/how-to-compare-ai-answers-without-guessing/"
+      ],
+      "finding": "Tool and field note have distinct operational and explanatory jobs.",
+      "limits": "No provider retrieval, monitoring, factual scoring, or hidden-process inference."
+    },
+    {
+      "id": "contextter-site-audit",
+      "publish": true,
+      "site": "contextter.com",
+      "topic": "Evaluate technical site-audit capability",
+      "job": "choose",
+      "coverage": "substantial",
+      "evidence": "primary",
+      "decision": "no_action",
+      "urls": [
+        "https://contextter.com/features/site-audit",
+        "https://contextter.com/learning-center/technical-seo-audit",
+        "https://contextter.com/blog/site-audit-contextter-technical-seo-issues"
+      ],
+      "finding": "Feature, procedure guide, and implementation article have distinct jobs; no fourth generic page is justified.",
+      "limits": "Common operator disclosed; no conversions or GSC performance reviewed."
+    },
+    {
+      "id": "contextter-keywords",
+      "publish": false,
+      "site": "contextter.com",
+      "topic": "Organize an owned keyword inventory",
+      "job": "act",
+      "coverage": "partial",
+      "evidence": "primary",
+      "decision": "strengthen",
+      "urls": [
+        "https://contextter.com/features/keyword-database",
+        "https://contextter.com/features/keyword-management"
+      ],
+      "finding": "Clarify the relationship between storage and management without a third URL.",
+      "limits": "No traffic or conversion data reviewed."
+    },
+    {
+      "id": "contextter-gsc",
+      "publish": false,
+      "site": "contextter.com",
+      "topic": "Connect Search Console to keyword and audit workflows",
+      "job": "act",
+      "coverage": "substantial",
+      "evidence": "primary",
+      "decision": "no_action",
+      "urls": [
+        "https://contextter.com/integrations/google-search-console"
+      ],
+      "finding": "A dedicated canonical integration page already owns the task.",
+      "limits": "Public page reviewed; authenticated behavior not tested."
+    },
+    {
+      "id": "mr-auto-synonyms",
+      "publish": true,
+      "site": "matthiasramahi.de",
+      "topic": "Book general automobile photography",
+      "job": "choose",
+      "coverage": "overlap",
+      "evidence": "observed",
+      "decision": "consolidate",
+      "urls": [
+        "https://matthiasramahi.de/autofotografie.html",
+        "https://matthiasramahi.de/automotive-fotografie.html",
+        "https://matthiasramahi.de/fahrzeugfotografie.html"
+      ],
+      "finding": "Three 200 self-canonical pages have closely related general promises. This triggers a consolidation review, not an automatic redirect.",
+      "limits": "Check GSC, links, conversions, intent equivalence and unique media before action."
+    },
+    {
+      "id": "mr-auto-tips",
+      "publish": false,
+      "site": "matthiasramahi.de",
+      "topic": "Learn how to photograph a car",
+      "job": "learn",
+      "coverage": "overlap",
+      "evidence": "observed",
+      "decision": "consolidate",
+      "urls": [
+        "https://matthiasramahi.de/auto-fotografieren-tipps.html",
+        "https://matthiasramahi.de/auto-fotografieren-tipps-duesseldorf.html"
+      ],
+      "finding": "Generic and Düsseldorf variants warrant an owner review before more variants.",
+      "limits": "No redirect until demand, links, conversions and equivalence are checked."
+    },
+    {
+      "id": "mr-local-portrait",
+      "publish": false,
+      "site": "matthiasramahi.de",
+      "topic": "Portrait photography by city",
+      "job": "choose",
+      "coverage": "overlap",
+      "evidence": "secondary",
+      "decision": "consolidate",
+      "urls": [
+        "https://matthiasramahi.de/portraitfotografie-duesseldorf.html",
+        "https://matthiasramahi.de/portraitfotografie-koeln.html",
+        "https://matthiasramahi.de/portraitfotografie-essen.html"
+      ],
+      "finding": "Repeated city-pattern URLs trigger a consolidation review rather than more generation.",
+      "limits": "Local proof, GSC, links and conversions must be checked before action."
+    }
+  ]
+}
