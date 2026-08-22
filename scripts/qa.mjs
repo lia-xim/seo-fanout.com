@@ -6,6 +6,7 @@ const root = fileURLToPath(new URL("..", import.meta.url)),
 const routeFiles = new Map([
   ["/tool/", "tool/index.html"],
   ["/methodik/", "methodik/index.html"],
+  ["/page-inventory/", "page-inventory/index.html"],
   ["/quellenrollen/", "quellenrollen/index.html"],
   ["/entscheidungen/", "entscheidungen/index.html"],
   ["/beispiele/", "beispiele/index.html"],
@@ -177,8 +178,16 @@ for (const [route, html] of built) {
   for (const m of html.matchAll(href)) {
     const u = m[1];
     if (!u.startsWith("/") || u.startsWith("//")) continue;
-    const [p, f] = u.split("#"),
-      n = p.endsWith("/") ? p : p + "/",
+    const [p, f] = u.split("#");
+    if (/\.[a-z0-9]+$/i.test(p)) {
+      try {
+        await access(join(dist, p.slice(1)));
+      } catch {
+        fail.push("missing asset " + u);
+      }
+      continue;
+    }
+    const n = p.endsWith("/") ? p : p + "/",
       target = routeFiles.get(n);
     if (!target) {
       fail.push(route + " unregistered link " + u);
@@ -201,5 +210,5 @@ if (fail.length) {
   process.exit(1);
 }
 console.log(
-  "QA passed: 18 indexable canonical pages, generated sitemap, root/www policy contract, noindex 404, ten validations, four published cases, correction SLA, links and deterministic tool.",
+  "QA passed: 19 indexable canonical pages, generated sitemap, root/www policy contract, noindex 404, ten validations, four published cases, correction SLA, links and deterministic tool.",
 );

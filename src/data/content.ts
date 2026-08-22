@@ -192,42 +192,48 @@ export const fieldNotes: ContentEntry[] = [
   {
     slug: "how-to-compare-ai-answers-without-guessing",
     kind: "field-note",
-    title: "How to compare AI answers without guessing",
-    description: "A reproducible way to compare visible outputs while staying honest about what the interface cannot observe.",
-    takeaway: "Use the same prompt, preserve the returned text, and compare observable properties before making a quality judgment.",
+    title: "Why comparing AI answers does not decide your SEO pages",
+    description: "Visible AI outputs can inform research, but page ownership and evidence—not provider differences—determine the SEO action.",
+    takeaway: "A different AI answer can change the research queue. It does not by itself justify a different URL.",
     published: "2026-08-22",
     updated: "2026-08-22",
     sections: [
       {
-        heading: "Hold the prompt constant",
+        heading: "Different output is not a different page job",
         paragraphs: [
-          "Start a fresh conversation in each tool and use the same prompt. Record the tool name, date, visible mode or model label, and any enabled search or research setting. If those conditions differ, note the difference instead of treating the outputs as a controlled comparison.",
-          "Copy the final visible answer exactly. Do not repair links, normalize headings, or remove caveats before measuring it. Editorial cleanup would change the object being compared.",
+          "Two AI tools can return different branches, examples, caveats, or sources for the same prompt. Those differences may reveal questions worth checking. They do not show which URL currently owns the user job, whether the site already answers it, or whether the evidence is ready to publish.",
+          "The page decision therefore starts after the comparison. Keep useful branches as declared inputs, then inspect the actual site inventory before adding work to the roadmap.",
         ],
       },
       {
-        heading: "Measure what can be observed",
+        heading: "What can travel downstream",
         paragraphs: [
-          "Word count, Markdown headings, list items, explicit URLs, and literal coverage of declared criteria can be reproduced from the text. They do not prove accuracy, usefulness, or the quality of the reasoning. They describe the shape of the answer.",
-          "That shape is still useful. It can show that one answer cites sources while another does not, that one addresses a required criterion literally, or that a response uses far more structure for the same prompt.",
+          "Preserve the topic, user job, branches, questions, entities, source roles, provider label, date, visible mode, and any known settings. Treat every imported branch as user-supplied planning material rather than a hidden query or verified demand signal.",
+          "A portable record makes the handoff reviewable. It also preserves provenance when a branch later becomes a section, research task, or rejected idea.",
+        ],
+        bullets: [
+          "Keep the original topic and primary user outcome.",
+          "Keep the visible provider and run context without inferring hidden internals.",
+          "Deduplicate wording variants before page review.",
+          "Mark source suggestions as unverified until the source is opened and checked.",
         ],
       },
       {
-        heading: "Keep judgment separate from measurement",
+        heading: "What the site must still prove",
         paragraphs: [
-          "After the mechanical comparison, review factual claims against current primary sources. Then assess whether the answer serves the intended reader, applies the right constraints, and makes unsupported claims. Record those judgments with a reviewer and a reason.",
-          "Do not turn a structural metric into a winner score. The longest answer is not automatically the most complete. More links do not make a claim correct. Literal term coverage can miss a strong paraphrase and reward empty repetition.",
+          "Name the current canonical owner, page promise, indexability, evidence state, and next step for the reader. Then classify coverage as no owner, a section gap, a material page gap, substantial coverage, overlap, or unknown.",
+          "This is the decision-critical evidence. Without it, a long fan-out can only support a research task—not a reliable URL recommendation.",
         ],
       },
       {
-        heading: "Do not narrate hidden internals",
+        heading: "Keep the two product roles separate",
         paragraphs: [
-          "The final answer does not reveal the private queries, tools, ranking logic, or chain of thought that produced it. A tool may publicly describe some product behavior, but one pasted output is not evidence that a particular hidden process occurred in that run.",
-          "A rigorous comparison ends at the observation boundary. That makes the result smaller, but it also makes it defensible.",
+          "AI Fanout is the separate upstream workspace for planning branches and public-answer evidence. SEO Fanout decides how those inputs should change a real page set. Both share the same operator, so neither is independent validation of the other.",
+          "If you already have an AI Fanout export, import it locally and complete the inventory review here. If you only need to compare provider outputs, stay in the upstream evidence workflow.",
         ],
       },
     ],
-    next: { label: "Open the AI Output Lab", href: "/lab/" },
+    next: { label: "Import branches into a page decision", href: "/tool/#import-plan" },
   },
   {
     slug: "what-a-no-page-decision-looks-like",

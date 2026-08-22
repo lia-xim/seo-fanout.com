@@ -18,6 +18,20 @@
       "limits": "The SEO Fan-out framework is a separate deterministic planning model."
     },
     {
+      "id": "google-canonical-guidance-2026-07",
+      "type": "primary_public_source",
+      "url": "https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls",
+      "supports": "Google documents redirects, rel=canonical, and sitemap inclusion as canonicalization signals.",
+      "limits": "Does not prove that two pages have equivalent user intent."
+    },
+    {
+      "id": "google-crawlable-links-2025-12",
+      "type": "primary_public_source",
+      "url": "https://developers.google.com/search/docs/crawling-indexing/links-crawlable",
+      "supports": "Google documents standard anchor elements with href values as crawlable links.",
+      "limits": "Does not validate the editorial usefulness of a linked page."
+    },
+    {
       "id": "domainportfolio-dossier",
       "type": "owner_strategy_record",
       "path": "C:/Users/matth/Documents/DomainPortfolio/strategy/domains/seo-fanout.com.md",

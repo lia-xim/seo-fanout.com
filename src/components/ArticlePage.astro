@@ -30,10 +30,10 @@ const backLabel = entry.kind === "guide" ? "All guides" : "All field notes";
           {section.bullets && <ul>{section.bullets.map((bullet) => <li>{bullet}</li>)}</ul>}
         </section>
       ))}
-      <aside class="article-next">
+      <div class="article-next">
         <strong>Continue with the work</strong>
         <a href={entry.next.href}>{entry.next.label} <span aria-hidden="true">→</span></a>
-      </aside>
+      </div>
     </div>
   </div>
 </article>

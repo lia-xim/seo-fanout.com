@@ -17,12 +17,14 @@ The custom domain is live and indexable. Canonical HTML routes use `index, follo
 - `/tool/` — canonical free decision tool
 - `/` — permanent redirect to `/tool/`
 - `/learn/`, `/blog/` — guides and field notes
+- `/page-inventory/` — operational inventory worksheet and downloadable CSV
+- `/lab/` — browser-local page-decision sensitivity test
 - `/methodik/`, `/quellenrollen/`, `/entscheidungen/` — transparent method and reference
 - `/beispiele/` — case-validation register
 - `/workflow/` — optional manual Contextter handoff
 - `/impressum/`, `/datenschutz/`, `/korrekturen/` — operator, privacy, and correction SLA
 
-The optional `/lab/` surface compares only user-pasted visible answer structure in one browser session. It is not a copy of the separate AI-Fanout Evidence Lab: it performs no provider retrieval, monitoring, longitudinal evidence collection, factual scoring, or hidden-process inference.
+The `/lab/` route is a browser-local sensitivity test for SEO page decisions: it holds topic and evidence constant while varying page-inventory assumptions. Provider retrieval, output comparison, monitoring, factual scoring, and hidden-process inference remain in the separate AI Fanout workflow. The two projects share an operator and are not independent validation.
 
 ## Development
 

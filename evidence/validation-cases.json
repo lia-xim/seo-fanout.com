@@ -3,7 +3,7 @@
   "verifiedAt": "2026-08-22",
   "methodVersion": "0.2.0",
   "sources": [
-    "https://seo-fanout.com/sitemap.xml",
+    "https://seo-fanout.com/sitemap-index.xml",
     "https://contextter.com/sitemap.xml",
     "https://matthiasramahi.de/sitemap.xml"
   ],
@@ -57,7 +57,7 @@
       "id": "sf-output-compare",
       "publish": false,
       "site": "seo-fanout.com",
-      "topic": "Compare visible AI answer structure",
+      "topic": "Why AI-answer comparison does not decide the page",
       "job": "act",
       "coverage": "substantial",
       "evidence": "observed",
@@ -65,7 +65,7 @@
       "urls": [
         "https://seo-fanout.com/blog/how-to-compare-ai-answers-without-guessing/"
       ],
-      "finding": "One field note owns the visible-output comparison job; the /lab/ route now stress-tests SEO page-inventory assumptions.",
+      "finding": "One field note now defines why provider-output differences do not decide URL ownership; /lab/ separately stress-tests page-inventory assumptions.",
       "limits": "No provider retrieval, monitoring, factual scoring, or hidden-process inference."
     },
     {
