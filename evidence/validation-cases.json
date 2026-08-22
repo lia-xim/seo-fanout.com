@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "verifiedAt": "2026-08-22",
-  "methodVersion": "0.1.0",
+  "methodVersion": "0.2.0",
   "sources": [
     "https://seo-fanout.com/sitemap.xml",
     "https://contextter.com/sitemap.xml",
@@ -17,11 +17,8 @@
       "job": "act",
       "coverage": "overlap",
       "evidence": "observed",
-      "decision": "consolidate",
-      "urls": [
-        "https://seo-fanout.com/",
-        "https://seo-fanout.com/tool/"
-      ],
+      "decision": "merge_content",
+      "urls": ["https://seo-fanout.com/", "https://seo-fanout.com/tool/"],
       "finding": "Both paths previously served the same tool. The root now returns 308 to the self-canonical /tool/ URL.",
       "limits": "Routing evidence only; no search-performance outcome claimed."
     },
@@ -31,9 +28,9 @@
       "site": "seo-fanout.com",
       "topic": "What SEO fan-out means on this site",
       "job": "learn",
-      "coverage": "partial",
+      "coverage": "section_gap",
       "evidence": "primary",
-      "decision": "strengthen",
+      "decision": "add_section",
       "urls": [
         "https://seo-fanout.com/learn/what-seo-fan-out-means-here/",
         "https://seo-fanout.com/methodik/"
@@ -66,10 +63,9 @@
       "evidence": "observed",
       "decision": "no_action",
       "urls": [
-        "https://seo-fanout.com/lab/",
         "https://seo-fanout.com/blog/how-to-compare-ai-answers-without-guessing/"
       ],
-      "finding": "Tool and field note have distinct operational and explanatory jobs.",
+      "finding": "One field note owns the visible-output comparison job; the /lab/ route now stress-tests SEO page-inventory assumptions.",
       "limits": "No provider retrieval, monitoring, factual scoring, or hidden-process inference."
     },
     {
@@ -95,9 +91,9 @@
       "site": "contextter.com",
       "topic": "Organize an owned keyword inventory",
       "job": "act",
-      "coverage": "partial",
+      "coverage": "page_gap",
       "evidence": "primary",
-      "decision": "strengthen",
+      "decision": "extend_page",
       "urls": [
         "https://contextter.com/features/keyword-database",
         "https://contextter.com/features/keyword-management"
@@ -114,9 +110,7 @@
       "coverage": "substantial",
       "evidence": "primary",
       "decision": "no_action",
-      "urls": [
-        "https://contextter.com/integrations/google-search-console"
-      ],
+      "urls": ["https://contextter.com/integrations/google-search-console"],
       "finding": "A dedicated canonical integration page already owns the task.",
       "limits": "Public page reviewed; authenticated behavior not tested."
     },
@@ -128,7 +122,7 @@
       "job": "choose",
       "coverage": "overlap",
       "evidence": "observed",
-      "decision": "consolidate",
+      "decision": "merge_content",
       "urls": [
         "https://matthiasramahi.de/autofotografie.html",
         "https://matthiasramahi.de/automotive-fotografie.html",
@@ -145,7 +139,7 @@
       "job": "learn",
       "coverage": "overlap",
       "evidence": "observed",
-      "decision": "consolidate",
+      "decision": "merge_content",
       "urls": [
         "https://matthiasramahi.de/auto-fotografieren-tipps.html",
         "https://matthiasramahi.de/auto-fotografieren-tipps-duesseldorf.html"
@@ -161,7 +155,7 @@
       "job": "choose",
       "coverage": "overlap",
       "evidence": "secondary",
-      "decision": "consolidate",
+      "decision": "merge_content",
       "urls": [
         "https://matthiasramahi.de/portraitfotografie-duesseldorf.html",
         "https://matthiasramahi.de/portraitfotografie-koeln.html",

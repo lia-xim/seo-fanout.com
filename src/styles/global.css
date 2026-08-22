@@ -586,3 +586,231 @@ dd { margin: 0; color: var(--body-text); font-size: 0.78rem; line-height: 1.55; 
   .lab-metric-table td::before { color: var(--muted); font-size: 0.72rem; font-weight: 620; content: attr(data-label); }
   .visible-differences { margin-top: 1.1rem; border: 1px solid var(--line); border-radius: var(--radius-small); }
 }
+
+/* Page-decision import and inventory stress test */
+.import-panel {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.72fr) minmax(0, 1fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  padding: clamp(2rem, 4vw, 3.4rem);
+  margin: 0 0 1.5rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-large);
+  background: var(--white);
+}
+.import-copy h2,
+.stress-results h2,
+.stress-controls h2 {
+  margin: 0.55rem 0 0.8rem;
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  font-weight: 690;
+  letter-spacing: -0.045em;
+  line-height: 1.08;
+}
+.import-copy p:last-child,
+.stress-controls > p {
+  color: var(--body-text);
+  line-height: 1.65;
+}
+.import-controls {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.import-controls > label,
+.stress-controls label {
+  margin: 0 0 0.45rem;
+  color: var(--ink);
+  font-size: 0.8rem;
+  font-weight: 650;
+}
+.import-controls textarea {
+  width: 100%;
+  min-height: 150px;
+  padding: 1rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-small);
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  line-height: 1.55;
+  resize: vertical;
+}
+.import-controls textarea:focus,
+.stress-controls input:focus,
+.stress-controls select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(21, 94, 239, 0.12);
+  outline: 0;
+}
+.import-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+  margin-top: 0.75rem;
+}
+.import-actions .secondary-button,
+.file-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 1rem;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+#fanout-file {
+  max-width: 230px;
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+.import-status {
+  margin-top: 0.7rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+.import-preview {
+  padding: 1rem;
+  margin-top: 1rem;
+  border-left: 3px solid var(--accent);
+  background: var(--accent-soft);
+}
+.import-preview > strong {
+  font-size: 0.8rem;
+}
+.import-preview dl {
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  gap: 0.6rem;
+  margin: 0.75rem 0 0;
+}
+.import-preview dl div {
+  min-width: 0;
+}
+.import-preview dt {
+  color: var(--muted);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.import-preview dd {
+  overflow: hidden;
+  margin: 0.25rem 0 0;
+  color: var(--ink);
+  font-size: 0.78rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.decision-lab {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.34fr) minmax(0, 1fr);
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-large);
+  background: var(--surface);
+  box-shadow: var(--shadow-workspace);
+}
+.stress-controls,
+.stress-results {
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+}
+.stress-controls {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--line);
+}
+.stress-controls label {
+  margin-top: 1.2rem;
+}
+.stress-controls input,
+.stress-controls select {
+  width: 100%;
+  min-height: 50px;
+  padding: 0 0.85rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-small);
+  background: var(--white);
+  color: var(--ink);
+  font-size: 0.88rem;
+}
+.stress-controls .primary-button {
+  margin-top: 1.3rem;
+}
+.stress-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 1.2rem;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.stress-grid article {
+  min-height: 190px;
+  padding: 1.25rem;
+  background: var(--white);
+}
+.stress-grid article > span {
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 0.65rem;
+}
+.stress-grid h3 {
+  margin: 0.8rem 0 0.35rem;
+  font-size: 1.25rem;
+  letter-spacing: -0.025em;
+}
+.stress-grid p {
+  min-height: 3em;
+  margin: 0 0 1rem;
+  color: var(--body-text);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+.stress-grid strong {
+  display: block;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--line);
+  color: var(--accent);
+  font-size: 0.78rem;
+}
+@media (max-width: 900px) {
+  .import-panel,
+  .decision-lab {
+    grid-template-columns: 1fr;
+  }
+  .stress-controls {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+}
+@media (max-width: 620px) {
+  .import-panel {
+    padding: 1.25rem;
+    border-radius: var(--radius-medium);
+  }
+  .import-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .import-actions > * {
+    width: 100%;
+    max-width: none !important;
+  }
+  .import-preview dl {
+    grid-template-columns: 1fr 1fr;
+  }
+  .stress-grid {
+    grid-template-columns: 1fr;
+  }
+  .stress-grid article {
+    min-height: 0;
+  }
+}

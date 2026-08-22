@@ -4,7 +4,6 @@ import { site } from "../data/site";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
-
 interface Props {
   title?: string;
   description?: string;
@@ -12,9 +11,67 @@ interface Props {
   pageClass?: string;
   structuredData?: Record<string, unknown>;
   indexable?: boolean;
+  language?: "en" | "de";
+  socialImage?: string;
 }
-const { title=site.title, description=site.description, canonicalPath=Astro.url.pathname, pageClass="", structuredData, indexable=site.indexable } = Astro.props;
-const canonical=new URL(canonicalPath,site.origin).toString();
-const robots=indexable ? "index, follow" : "noindex, follow, noarchive";
+const {
+  title = site.title,
+  description = site.description,
+  canonicalPath = Astro.url.pathname,
+  pageClass = "",
+  structuredData,
+  indexable = site.indexable,
+  language = site.language,
+  socialImage = "/social-card.png",
+} = Astro.props;
+const canonical = new URL(canonicalPath, site.origin).toString(),
+  robots = indexable ? "index, follow" : "noindex, follow, noarchive",
+  fullTitle = title === site.title ? title : `${title} | ${site.title}`,
+  image = new URL(socialImage, site.origin).toString(),
+  locale = language === "de" ? "de_DE" : "en_US";
 ---
-<!doctype html><html lang={site.language}><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="theme-color" content="#ffffff" /><link rel="icon" href="/favicon.svg" type="image/svg+xml" /><meta name="robots" content={robots} /><meta name="description" content={description} /><link rel="canonical" href={canonical} /><title>{title===site.title?title:`${title} | ${site.title}`}</title>{structuredData&&<script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />}</head><body class={pageClass}><a class="skip-link" href="#main-content">Skip to content</a><Header /><main id="main-content"><slot /></main><Footer /></body></html>
+
+<!doctype html>
+<html lang={language}>
+  <head
+    ><meta charset="UTF-8" /><meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    /><meta name="theme-color" content="#ffffff" /><link
+      rel="icon"
+      href="/favicon.svg"
+      type="image/svg+xml"
+    /><meta name="robots" content={robots} /><meta
+      name="description"
+      content={description}
+    /><link rel="canonical" href={canonical} /><meta
+      property="og:type"
+      content="website"
+    /><meta property="og:site_name" content={site.title} /><meta
+      property="og:title"
+      content={fullTitle}
+    /><meta property="og:description" content={description} /><meta
+      property="og:url"
+      content={canonical}
+    /><meta property="og:image" content={image} /><meta
+      property="og:locale"
+      content={locale}
+    /><meta name="twitter:card" content="summary_large_image" /><meta
+      name="twitter:title"
+      content={fullTitle}
+    /><meta name="twitter:description" content={description} /><meta
+      name="twitter:image"
+      content={image}
+    /><title>{fullTitle}</title>{
+      structuredData && (
+        <script
+          is:inline
+          type="application/ld+json"
+          set:html={JSON.stringify(structuredData)}
+        />
+      )
+    }</head
+  ><body class={pageClass}
+    ><a class="skip-link" href="#main-content">{language === "de" ? "Zum Inhalt springen" : "Skip to content"}</a><Header
+    /><main id="main-content"><slot /></main><Footer /></body>
+</html>

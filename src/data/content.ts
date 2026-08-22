@@ -44,7 +44,7 @@ export const guides: ContentEntry[] = [
           "Entities: the people, products, rules, pages, or systems that need an explicit identity.",
           "Questions: the smallest set of issues that could change the decision.",
           "Source roles: the kind of evidence needed, such as a current specification, firsthand test, or page inventory.",
-          "Page decision: strengthen, consolidate, create one page, build evidence first, or take no page action.",
+          "Page decision: extend a page, add a section, merge content, build evidence first, create one URL, or take no action.",
         ],
       },
       {
@@ -101,7 +101,7 @@ export const guides: ContentEntry[] = [
       {
         heading: "A conservative default",
         paragraphs: [
-          "If an existing page partly covers the job, strengthen it. If several pages compete, consolidate. If evidence is missing, build evidence. Create one new page only when no existing page owns a distinct job and credible source material is ready.",
+          "If an existing page has one bounded gap, add a section. If its promise needs material expansion, extend it. If several pages compete, merge content only after checking intent equivalence. If evidence is missing, build an evidence asset. Create one new URL only when no existing page owns a distinct job and credible source material is ready.",
           "That default does not guarantee a ranking outcome. It produces a cleaner, more reviewable reason for the page to exist.",
         ],
       },
@@ -182,7 +182,7 @@ export const fieldNotes: ContentEntry[] = [
       {
         heading: "Count decisions, not drafts",
         paragraphs: [
-          "A healthier review tracks how many topics were strengthened, consolidated, held for evidence, rejected, or left unchanged. That record shows whether research is improving the site rather than merely expanding it.",
+          "A healthier review tracks how many pages were extended, given a new section, merged, held for evidence, created, or left unchanged. That record shows whether research is improving the site rather than merely expanding it.",
           "The goal is not less content as a doctrine. It is fewer pages that exist for no durable reason, and more attention on the pages and evidence that already carry a real job.",
         ],
       },

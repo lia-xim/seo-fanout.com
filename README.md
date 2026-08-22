@@ -4,7 +4,7 @@ Public source repository for seo-fanout.com, a standalone deterministic Fan-out 
 
 ## Product
 
-The free browser-local tool turns one keyword, topic, or page question into a bounded user job, relevant subquestions, evidence needs, and exactly one priority: strengthen, consolidate, create a page, create evidence first, or take no action. It does not call a model or search provider, expose hidden queries, or create indexable pages for variations.
+The free browser-local tool turns one keyword, topic, page question, or locally imported AI Fanout JSON plan into exactly one priority: extend a page, add a section, merge content, build evidence first, create one URL, or take no action. It does not call a model or search provider, expose hidden queries, or create indexable pages for variations.
 
 The site is a newly registered project of Matthias Ramahi. Contextter is an optional manually connected workflow from the same operator, not independent corroboration.
 

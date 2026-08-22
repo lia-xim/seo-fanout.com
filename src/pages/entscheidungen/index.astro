@@ -1,40 +1,56 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-
 const decisions = [
   {
     code: "D-01",
-    title: "Strengthen this page",
-    trigger: "One existing page partially owns the same primary user job.",
-    action: "Add the missing questions, evidence, boundaries, and next step to that page.",
-    guardrail: "Do not create a sibling URL for branches that fit the current promise.",
+    title: "Extend the existing page",
+    trigger: "One page owns the job, but its promise needs material expansion.",
+    action:
+      "Expand its architecture, questions and supporting proof on the canonical URL.",
+    guardrail: "Do not split the expansion into sibling URLs by default.",
   },
   {
     code: "D-02",
-    title: "Consolidate the overlap",
-    trigger: "Several pages compete for the same job or differ only by wording.",
-    action: "Choose an intent-equivalent canonical owner, merge unique value, and redirect only true equivalents.",
-    guardrail: "Do not bulk-redirect unrelated paths to a stronger homepage or hub.",
+    title: "Add one section",
+    trigger:
+      "One page owns the job and only one bounded information gap remains.",
+    action: "Add a focused section with the evidence needed to support it.",
+    guardrail: "A missing subsection is not a missing page.",
   },
   {
     code: "D-03",
-    title: "Create one new page",
-    trigger: "No page owns a distinct user job and primary or observed evidence is ready.",
-    action: "Publish one bounded page whose promise covers the mapped branches.",
-    guardrail: "Branches are sections or evidence needs by default, not automatic URLs.",
+    title: "Merge overlapping content",
+    trigger: "Several pages compete for the same primary job.",
+    action:
+      "Select the strongest canonical owner, merge unique value and redirect only true intent equivalents.",
+    guardrail:
+      "Do not redirect distinct jobs merely because their keywords look similar.",
   },
   {
     code: "D-04",
-    title: "Build evidence first",
-    trigger: "Proof is missing, only secondary, or the page inventory is unknown.",
-    action: "Create a test, dataset, interview, worksheet, inventory, or source register before publishing.",
-    guardrail: "A plausible draft is not a substitute for original evidence.",
+    title: "Build an evidence asset first",
+    trigger:
+      "Evidence is weak, secondary-only, or the page inventory is unknown.",
+    action:
+      "Create a test, dataset, interview, worksheet, inventory or source register.",
+    guardrail: "A plausible draft is not original evidence.",
   },
   {
     code: "D-05",
-    title: "Take no page action",
-    trigger: "The current page substantially covers the job with credible evidence.",
-    action: "Record the review, maintain the evidence, and revisit only when the job or source material changes.",
+    title: "Create one new URL",
+    trigger:
+      "No page owns a distinct job and primary or observed evidence is ready.",
+    action:
+      "Publish one bounded canonical page whose promise contains the related branches.",
+    guardrail: "Fan-out branches are not automatic URLs.",
+  },
+  {
+    code: "D-06",
+    title: "Take no content action",
+    trigger:
+      "The current page substantially covers the job with decision-ready evidence.",
+    action:
+      "Record the review and revisit only when the job, evidence or inventory changes.",
     guardrail: "More output is not automatically more useful.",
   },
 ] as const;
@@ -42,37 +58,66 @@ const decisions = [
 
 <BaseLayout
   title="Page decisions"
-  description="Choose between strengthening, consolidating, creating one page, building evidence, or taking no page action."
+  description="Choose between extending a page, adding a section, merging content, creating one URL, building evidence, or taking no page action."
   canonicalPath="/entscheidungen/"
   pageClass="reference-page"
 >
   <header class="reference-hero">
-    <p class="mono-label">Decision guide</p>
-    <h1>Five endings. Only one adds a page.</h1>
-    <p>The framework is deliberately conservative: most branches should improve an existing asset, clarify evidence, or disappear from the publishing queue.</p>
+    <p class="mono-label">Decision guide · method 0.2</p><h1>
+      Six endings. Only one adds a URL.
+    </h1><p>
+      The page inventory—not the number of fan-out branches—decides whether
+      publication work belongs on an existing page, in a merge, in an evidence
+      asset or on one new URL.
+    </p>
   </header>
-
-  <section class="decision-ledger" aria-label="Five page decisions">
-    {decisions.map((decision) => (
-      <article>
-        <div class="decision-index"><span>{decision.code}</span></div>
-        <div>
-          <h2>{decision.title}</h2>
-          <dl>
-            <div><dt>Trigger</dt><dd>{decision.trigger}</dd></div>
-            <div><dt>Action</dt><dd>{decision.action}</dd></div>
-            <div><dt>Guardrail</dt><dd>{decision.guardrail}</dd></div>
-          </dl>
-        </div>
-      </article>
-    ))}
+  <section class="decision-ledger" aria-label="Six page decisions">
+    {
+      decisions.map((decision) => (
+        <article>
+          <>
+            <div class="decision-index">
+              <span>{decision.code}</span>
+            </div>
+            <div>
+              <>
+                <h2>{decision.title}</h2>
+                <dl>
+                  <>
+                    <div>
+                      <>
+                        <dt>Trigger</dt>
+                        <dd>{decision.trigger}</dd>
+                      </>
+                    </div>
+                    <div>
+                      <>
+                        <dt>Action</dt>
+                        <dd>{decision.action}</dd>
+                      </>
+                    </div>
+                    <div>
+                      <>
+                        <dt>Guardrail</dt>
+                        <dd>{decision.guardrail}</dd>
+                      </>
+                    </div>
+                  </>
+                </dl>
+              </>
+            </div>
+          </>
+        </article>
+      ))
+    }
   </section>
-
   <section class="reference-section action-band">
     <div>
-      <p class="mono-label">Before deciding</p>
-      <h2>Declare coverage and evidence. Do not let the headline choose the URL.</h2>
-    </div>
-    <a class="button-link" href="/tool/#explorer">Build a decision map <span aria-hidden="true">→</span></a>
+      <p class="mono-label">Before deciding</p><h2>
+        Declare page coverage and evidence. Do not let a keyword list choose the
+        URL.
+      </h2>
+    </div><a class="button-link" href="/tool/#explorer"
+      >Build a page decision <span aria-hidden="true">→</span></a>
   </section>
 </BaseLayout>
