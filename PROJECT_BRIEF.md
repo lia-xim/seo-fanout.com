@@ -2,13 +2,15 @@
 
 ## Accepted purpose
 
-Build a standalone free practitioner tool that converts a keyword, page question, or locally imported AI Fanout JSON plan into a defensible SEO page decision.
+Build a standalone SEO research view that reuses one completed AI Fanout result without triggering a second AI or provider request.
 
 ## Product contract
 
-The tool is deterministic and browser-local. It does not call a model, search provider, analytics service, or paid API and never claims access to hidden queries or reasoning. It chooses exactly one outcome: extend an existing page, add one section, merge content, create an evidence asset first, create one URL, or take no page action.
+The tool is deterministic and browser-local. AI Fanout sends only the already visible, selected query strings, visible source relationships, run-level sources and run metadata through a versioned URL-fragment handoff. SEO Fanout reads the fragment, removes it from the address bar and creates research lenses, recurring-term and source-scope summaries plus a local brief. It does not call a model, search provider, analytics service or paid API.
 
-The project is not the AI Fanout query planner or Evidence Lab. The `/lab/` route stress-tests SEO page-inventory assumptions only. Provider retrieval, paid generation, output comparison, monitoring, factual scoring, and hidden-process inference remain outside this site's scope.
+AI Fanout owns the provider request and the raw observed-result view. SEO Fanout owns the SEO-oriented reading of the same run. Contextter is the optional next workflow for search demand, current pages, Search Console, Site Audit and ongoing work. The three products share an operator and are not independent corroboration.
+
+The result must not be presented as hidden queries, keyword demand, ranking evidence, a content plan, site coverage or citation probability. Wording-based query lenses are transparent heuristics and remain user-reviewable.
 
 ## Domain and identity
 

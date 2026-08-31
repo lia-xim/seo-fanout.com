@@ -1,23 +1,23 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import FanoutTool from "../../components/FanoutTool.astro";
+import SeoResearchTool from "../../components/SeoResearchTool.astro";
 import { site } from "../../data/site";
 
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  name: site.title,
+  name: "SEO Query Fanout Research",
   url: `${site.origin}/tool/`,
   applicationCategory: "BusinessApplication",
   operatingSystem: "Any",
   browserRequirements: "JavaScript enabled",
   isAccessibleForFree: true,
-  softwareVersion: "0.2.0",
+  softwareVersion: "1.0.0",
   inLanguage: "en",
   featureList: [
-    "Local AI Fanout JSON import",
-    "Six deterministic SEO page decisions",
-    "Local JSON export",
+    "Browser-local AI Fanout result handoff",
+    "Deterministic query-lens and source-scope analysis",
+    "Local SEO research brief export",
   ],
   description: site.description,
   creator: {
@@ -28,5 +28,5 @@ const structuredData = {
 ---
 
 <BaseLayout canonicalPath="/tool/" structuredData={structuredData} pageClass="tool-page">
-  <FanoutTool />
+  <SeoResearchTool />
 </BaseLayout>

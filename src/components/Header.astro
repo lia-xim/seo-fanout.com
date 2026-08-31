@@ -7,7 +7,7 @@ const isCurrent = (href: string) => href === "/tool/" ? currentPath === "/" || c
 
 <header class="site-header">
   <div class="header-inner">
-    <a class="brand" href="/tool/" aria-label="SEO Fan-out Explorer, tool">
+    <a class="brand" href="/tool/" aria-label="SEO Fanout research view">
       <svg class="brand-mark" viewBox="0 0 44 34" aria-hidden="true">
         <circle cx="5" cy="17" r="2.5" />
         <circle cx="38" cy="5" r="2.5" />
@@ -24,7 +24,7 @@ const isCurrent = (href: string) => href === "/tool/" ? currentPath === "/" || c
       ))}
     </nav>
 
-    <a class="header-action" href="/tool/#explorer">Start a decision</a>
+    <a class="header-action" href="https://ai-fanout.com/#tool">Run AI Fanout</a>
 
     <details class="mobile-nav">
       <summary aria-label="Open navigation">
@@ -34,7 +34,6 @@ const isCurrent = (href: string) => href === "/tool/" ? currentPath === "/" || c
         {site.navigation.map((item) => (
           <a href={item.href} aria-current={isCurrent(item.href) ? "page" : undefined}>{item.label}</a>
         ))}
-        <a href="/blog/" aria-current={currentPath.startsWith("/blog/") ? "page" : undefined}>Field notes</a>
         <a href="/workflow/" aria-current={currentPath.startsWith("/workflow/") ? "page" : undefined}>Workflow</a>
       </nav>
     </details>

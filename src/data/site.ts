@@ -2,15 +2,15 @@ export const site = {
   domain: "seo-fanout.com",
   origin: "https://seo-fanout.com",
   language: "en",
-  title: "SEO Fan-out Explorer",
+  title: "SEO Query Fanout Research",
   description:
-    "A browser-local decision tool that turns a keyword or AI Fanout plan into one defensible SEO page action.",
+    "A browser-local SEO research view for one AI query fanout run, with transparent query lenses, source scope and next evidence checks.",
   purpose:
-    "Decide whether to extend a page, add a section, merge content, build evidence, create one URL, or take no action.",
+    "Translate one already completed AI Fanout run into a transparent SEO research brief without a second model or provider request.",
   status:
-    "Indexable public tool launch with verified canonical routing, automatic sitemap, legal pages, correction SLA, and ten documented inventory validations.",
+    "Indexable public SEO research view connected browser-locally to AI Fanout, with no second provider request.",
   boundary:
-    "The tool must not claim access to hidden search or model queries and must not generate one indexable page per variation.",
+    "The tool analyses only the transferred visible result and must not claim hidden queries, search demand, rankings, site coverage or citation probability.",
   primaryProject: "Contextter (accepted)",
   githubUrl: "https://github.com/lia-xim/seo-fanout.com",
   issuesUrl: "https://github.com/lia-xim/seo-fanout.com/issues",
@@ -22,12 +22,12 @@ export const site = {
   operator: {
     name: "Matthias Ramahi",
     disclosure:
-      "SEO Fan-out and Contextter share an operator. Contextter is not an independent validator of this framework.",
+      "SEO Fanout, AI Fanout and Contextter share an operator. They are connected workflows, not independent validation.",
   },
   navigation: [
-    { href: "/tool/", label: "Tool" },
-    { href: "/learn/", label: "Learn" },
-    { href: "/seo-query-fanout-workflow/", label: "Workflow" },
+    { href: "/tool/", label: "Research view" },
+    { href: "/seo-query-fanout-workflow/", label: "How it connects" },
+    { href: "/methodik/", label: "Method" },
     { href: "/beispiele/", label: "Examples" },
   ],
 } as const;

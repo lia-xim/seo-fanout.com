@@ -1,10 +1,12 @@
 # seo-fanout.com
 
-Public source repository for seo-fanout.com, a standalone deterministic Fan-out Explorer and learning resource.
+Public source repository for seo-fanout.com, a browser-local SEO research view for completed AI query fanout runs.
 
 ## Product
 
-The free browser-local tool turns one keyword, topic, page question, or locally imported AI Fanout JSON plan into exactly one priority: extend a page, add a section, merge content, build evidence first, create one URL, or take no action. It does not call a model or search provider, expose hidden queries, or create indexable pages for variations.
+AI Fanout performs one bounded OpenAI or Gemini web-search run. From that visible result, a visitor can open SEO Fanout directly. A versioned, size-limited handoff travels only in the URL fragment, is read in the destination browser and is removed from the address bar immediately. SEO Fanout groups the already exposed query strings into transparent research lenses, preserves visible source scope and produces a local SEO research brief. It makes no second model or provider request.
+
+The analysis does not prove hidden queries, search demand, rankings, site coverage, content requirements or citation probability. A synthetic example is available without an API request and is labelled as synthetic.
 
 The site is a newly registered project of Matthias Ramahi. Contextter is an optional manually connected workflow from the same operator, not independent corroboration.
 
@@ -14,17 +16,15 @@ The custom domain is live and indexable. Canonical HTML routes use `index, follo
 
 ## Routes
 
-- `/tool/` — canonical free decision tool
+- `/tool/` — canonical SEO research view and browser-local handoff receiver
 - `/` — permanent redirect to `/tool/`
-- `/learn/`, `/blog/` — guides and field notes
-- `/page-inventory/` — operational inventory worksheet and downloadable CSV
-- `/lab/` — browser-local page-decision sensitivity test
-- `/methodik/`, `/quellenrollen/`, `/entscheidungen/` — transparent method and reference
-- `/beispiele/` — case-validation register
-- `/workflow/` — optional manual Contextter handoff
+- `/methodik/`, `/quellenrollen/` — transparent method and source-scope reference
+- `/beispiele/` — reviewed interface and research examples
+- `/seo-query-fanout-workflow/` — exact AI Fanout to SEO Fanout connection
+- `/workflow/` — optional Contextter evidence workflow
 - `/impressum/`, `/datenschutz/`, `/korrekturen/` — operator, privacy, and correction SLA
 
-The `/lab/` route is a browser-local sensitivity test for SEO page decisions: it holds topic and evidence constant while varying page-inventory assumptions. Provider retrieval, output comparison, monitoring, factual scoring, and hidden-process inference remain in the separate AI Fanout workflow. The two projects share an operator and are not independent validation.
+Legacy page-decision routes remain available during the transition but are removed from the primary product journey. AI Fanout, SEO Fanout and Contextter share an operator and are not independent validation.
 
 ## Development
 

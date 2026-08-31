@@ -12,7 +12,7 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "qa": "node scripts/qa.mjs",
+    "qa": "node scripts/qa.mjs && node --test scripts/seo-research.test.mjs",
     "seo:audit": "node scripts/seo-audit.mjs",
     "qa:browser": "node scripts/browser-qa.mjs",
     "verify": "pnpm build && pnpm qa"

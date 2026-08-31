@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seo-fanout.com/evidence/seo-research-handoff.schema.v1.json",
+  "title": "AI Fanout to SEO Fanout browser handoff",
+  "type": "object",
+  "required": ["schemaVersion", "producer", "transferredAt", "run", "notice"],
+  "properties": {
+    "schemaVersion": { "const": "ai-fanout.seo-research-handoff/1.0" },
+    "producer": { "const": "ai-fanout.com" },
+    "transferredAt": { "type": "string", "format": "date-time" },
+    "run": {
+      "type": "object",
+      "required": ["question", "language", "evidenceState", "queries", "runSources"],
+      "properties": {
+        "question": { "type": "string", "minLength": 2, "maxLength": 160 },
+        "language": { "enum": ["en", "de"] },
+        "market": { "type": "string", "maxLength": 120 },
+        "providerLabel": { "type": "string", "maxLength": 160 },
+        "evidenceLabel": { "type": "string", "maxLength": 160 },
+        "evidenceState": { "enum": ["provider_exposed_native_search", "modelled_search_ideas"] },
+        "displayedRunTime": { "type": "string", "maxLength": 120 },
+        "queries": { "type": "array", "minItems": 1, "maxItems": 20 },
+        "runSources": { "type": "array", "maxItems": 40 }
+      }
+    },
+    "notice": { "type": "string", "maxLength": 400 }
+  }
+}

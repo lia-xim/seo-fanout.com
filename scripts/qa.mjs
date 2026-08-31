@@ -63,11 +63,9 @@ const notFound = await readFile(join(dist, "404.html"), "utf8"),
   sitemap = await readFile(join(dist, "sitemap-0.xml"), "utf8");
 const vercel = JSON.parse(await read("vercel.json")),
   site = await read("src/data/site.ts"),
-  tool = await read("src/scripts/fanout-tool.ts"),
-  engine = await read("src/lib/decision-engine.ts"),
-  cases = JSON.parse(await read("evidence/validation-cases.json")),
-  handoffSchema = JSON.parse(await read("evidence/ai-fanout-planner-handoff.schema.v1.json")),
-  handoffFixture = JSON.parse(await read("evidence/ai-fanout-planner-handoff.synthetic.v1.json"));
+  tool = await read("src/scripts/seo-research-tool.ts"),
+  research = await read("src/lib/seo-research.mjs"),
+  handoffSchema = JSON.parse(await read("evidence/seo-research-handoff.schema.v1.json"));
 for (const [route, html] of built) {
   pass(html.includes('content="index, follow"'), route + " not indexable");
   pass(
@@ -146,57 +144,35 @@ pass(
     (built.get("/tool/") || "").includes('"@type":"WebApplication"'),
   "tool schema creator incorrect",
 );
-pass(cases.cases.length === 10, "ten validation cases required");
 pass(
-  cases.cases.filter((c) => c.publish).length >= 3,
-  "three published cases required",
-);
-pass(
-  (built.get("/beispiele/") || "").includes("10 of 10 inventories reviewed"),
-  "case gate copy missing",
+  (built.get("/beispiele/") || "").includes("1 synthetic interface example") &&
+    (built.get("/beispiele/") || "").includes("0 new public provider cases"),
+  "truthful example state missing",
 );
 pass(
   (built.get("/korrekturen/") || "").includes("five German business days") &&
     (built.get("/korrekturen/") || "").includes("within two business days"),
   "correction SLA missing",
 );
-for (const decision of [
-  "extend_page",
-  "add_section",
-  "merge_content",
-  "evidence_asset",
-  "create_url",
-  "no_action",
-])
-  pass(engine.includes(decision), "missing " + decision);
 pass(
-  !tool.includes("fetch(") && !tool.includes("localStorage"),
-  "tool sends or retains input",
+  !tool.includes("fetch(") && !tool.includes("localStorage") && !tool.includes("sessionStorage"),
+  "research view sends or retains the transferred result",
 );
 pass(
-  tool.includes("ai_fanout_import") && /file\.size\s*>\s*200000/.test(tool),
-  "local AI Fanout import contract missing",
+  tool.includes("history.replaceState") && research.includes("SEO_HANDOFF_MAX_BYTES"),
+  "fragment removal or handoff size gate missing",
 );
 pass(
-  handoffSchema.properties?.data?.properties?.plannerVersion?.const ===
-    "fanout-planner/1.0.0" &&
-    handoffSchema.properties?.data?.properties?.methodVersion?.const ===
-      "hypothetical-query-fanout/1.0",
-  "AI Fanout consumer contract version mismatch",
+  handoffSchema.properties?.schemaVersion?.const ===
+    "ai-fanout.seo-research-handoff/1.0" &&
+    handoffSchema.properties?.producer?.const === "ai-fanout.com",
+  "AI Fanout SEO research handoff contract mismatch",
 );
 pass(
-  handoffFixture.data?.branches?.length >= 4 &&
-    handoffFixture.data?.branches?.every(
-      (branch) =>
-        branch.query && branch.intent && branch.rationale &&
-        branch.sourceType && branch.assumption,
-    ) &&
-    handoffFixture.data?.notice?.includes("Not an AI Fanout export"),
-  "synthetic handoff fixture invalid or provenance boundary missing",
-);
-pass(
-  tool.includes('"data.question"') && tool.includes('"sourcetype"'),
-  "AI Fanout response-shaped handoff is not parsed",
+  research.includes("provider_exposed_native_search") &&
+    research.includes("modelled_search_ideas") &&
+    (built.get("/tool/") || "").includes("No second AI request"),
+  "observed/modelled boundary or one-request promise missing",
 );
 const href = /<a\b[^>]*\bhref="([^"]+)"/g;
 for (const [route, html] of built) {
@@ -235,5 +211,5 @@ if (fail.length) {
   process.exit(1);
 }
 console.log(
-  "QA passed: 21 indexable canonical pages, generated sitemap, root/www policy contract, noindex 404, ten validations, four published cases, correction SLA, links and deterministic tool.",
+  "QA passed: 21 indexable canonical pages, generated sitemap, root/www policy contract, noindex 404, correction SLA, links and browser-local one-request SEO research view.",
 );

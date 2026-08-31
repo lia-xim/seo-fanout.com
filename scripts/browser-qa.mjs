@@ -1,6 +1,6 @@
 import { chromium } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
-import { readFile } from "node:fs/promises";
+import { exampleSeoHandoff } from "../src/lib/seo-research.mjs";
 
 const flagIndex = process.argv.indexOf("--base-url");
 const baseUrl = flagIndex >= 0 ? process.argv[flagIndex + 1] : "http://127.0.0.1:4321";
@@ -59,31 +59,28 @@ const [csvDownload] = await Promise.all([
 check(csvDownload.suggestedFilename() === "seo-page-inventory.csv", "CSV download filename incorrect");
 
 await page.goto(new URL("/tool/", baseUrl).toString(), { waitUntil: "networkidle" });
-const handoffFixture = await readFile(
-  new URL("../evidence/ai-fanout-planner-handoff.synthetic.v1.json", import.meta.url),
-  "utf8",
-);
-await page.locator("#fanout-json").fill(handoffFixture);
-await page.getByRole("button", { name: "Use pasted JSON" }).click();
-check(
-  (await page.locator("#import-topic").textContent()) ===
-    "How should an SEO team audit query fanout?",
-  "AI Fanout response-shaped question was not imported",
-);
-check(
-  (await page.locator("#import-branches").textContent()) === "4",
-  "AI Fanout response-shaped branches were not imported",
-);
-await page.getByRole("button", { name: "Continue" }).click();
-await page.getByRole("button", { name: "Continue" }).click();
-await page.getByRole("button", { name: "Continue" }).click();
-await page.getByRole("button", { name: "Get page decision" }).click();
-check(await page.getByText("Add one section", { exact: true }).isVisible(), "default tool result missing");
+await page.getByRole("button", { name: "View a synthetic example" }).click();
+check(await page.getByText("Which SEO tools suit a small business?", { exact: true }).isVisible(), "synthetic research result missing");
+check(await page.locator("[data-lens-list] li").count() >= 3, "research lenses missing");
 const [jsonDownload] = await Promise.all([
   page.waitForEvent("download"),
-  page.getByRole("button", { name: "Export JSON" }).click(),
+  page.getByRole("button", { name: "Download JSON" }).click(),
 ]);
-check(jsonDownload.suggestedFilename().endsWith(".json"), "tool JSON export missing");
+check(jsonDownload.suggestedFilename().startsWith("seo-fanout-research-"), "research JSON export missing");
+
+const handoff = exampleSeoHandoff("de");
+handoff.run.evidenceState = "provider_exposed_native_search";
+handoff.run.evidenceLabel = "Vom Anbieter offengelegte API-Suchaktionen";
+handoff.run.providerLabel = "GPT-5.6 Luna via OpenAI API";
+const encoded = Buffer.from(JSON.stringify(handoff), "utf8").toString("base64url");
+const requests = [];
+page.on("request", (request) => requests.push(request.url()));
+await page.goto(new URL("/methodik/", baseUrl).toString(), { waitUntil: "networkidle" });
+await page.goto(new URL(`/tool/#research=${encoded}`, baseUrl).toString(), { waitUntil: "networkidle" });
+check(await page.getByText("Welche SEO-Tools passen zu kleinen Unternehmen?", { exact: true }).isVisible(), "transferred German result missing");
+check((await page.evaluate(() => location.hash)) === "", "handoff fragment was not removed");
+check(!requests.some((url) => /\/api\//u.test(url)), "SEO research triggered an API request");
+check((await page.locator("html").getAttribute("lang")) === "de", "transferred language was not applied");
 
 await page.goto(new URL("/lab/", baseUrl).toString(), { waitUntil: "networkidle" });
 await page.getByRole("button", { name: "Update matrix" }).click();
