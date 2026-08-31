@@ -4,7 +4,7 @@ Public source repository for seo-fanout.com, a browser-local SEO research view f
 
 ## Product
 
-AI Fanout performs one bounded OpenAI or Gemini web-search run. From that visible result, a visitor can open SEO Fanout directly. A versioned, size-limited handoff travels only in the URL fragment, is read in the destination browser and is removed from the address bar immediately. SEO Fanout groups the already exposed query strings into transparent research lenses, preserves visible source scope and produces a local SEO research brief. It makes no second model or provider request.
+AI Fanout performs one bounded OpenAI or Gemini web-search run. From that visible result, a visitor can open SEO Fanout directly. A versioned, size-limited handoff travels only in the URL fragment, is read in the destination browser and is removed from the address bar immediately. SEO Fanout converts the exposed query strings into a working brief with concrete questions, proof requirements, a source-role mix and explicit validation gaps. Raw queries and source scope remain inspectable. It makes no second model or provider request.
 
 The analysis does not prove hidden queries, search demand, rankings, site coverage, content requirements or citation probability. A synthetic example is available without an API request and is labelled as synthetic.
 

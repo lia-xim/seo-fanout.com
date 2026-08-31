@@ -6,7 +6,7 @@ Build a standalone SEO research view that reuses one completed AI Fanout result 
 
 ## Product contract
 
-The tool is deterministic and browser-local. AI Fanout sends only the already visible, selected query strings, visible source relationships, run-level sources and run metadata through a versioned URL-fragment handoff. SEO Fanout reads the fragment, removes it from the address bar and creates research lenses, recurring-term and source-scope summaries plus a local brief. It does not call a model, search provider, analytics service or paid API.
+The tool is deterministic and browser-local. AI Fanout sends only the already visible, selected query strings, visible source relationships, run-level sources and run metadata through a versioned URL-fragment handoff. SEO Fanout reads the fragment, removes it from the address bar and creates a working direction, concrete research tasks, proof requirements, a source-role mix and explicit validation gaps. Raw queries and source scope remain available as supporting evidence. It does not call a model, search provider, analytics service or paid API.
 
 AI Fanout owns the provider request and the raw observed-result view. SEO Fanout owns the SEO-oriented reading of the same run. Contextter is the optional next workflow for search demand, current pages, Search Console, Site Audit and ongoing work. The three products share an operator and are not independent corroboration.
 

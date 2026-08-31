@@ -4,7 +4,7 @@ export const site = {
   language: "en",
   title: "SEO Query Fanout Research",
   description:
-    "A browser-local SEO research view for one AI query fanout run, with transparent query lenses, source scope and next evidence checks.",
+    "A browser-local SEO brief from one AI query fanout run, with concrete research tasks, proof requirements and explicit validation gaps.",
   purpose:
     "Translate one already completed AI Fanout run into a transparent SEO research brief without a second model or provider request.",
   status:
