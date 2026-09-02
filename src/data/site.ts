@@ -11,7 +11,7 @@ export const site = {
     "Indexable public SEO research view connected browser-locally to AI Fanout, with no second provider request.",
   boundary:
     "The tool analyses only the transferred visible result and must not claim hidden queries, search demand, rankings, site coverage or citation probability.",
-  primaryProject: "Crawl Foundry (formerly Contextter; accepted)",
+  primaryProject: "Crawl Foundry (accepted)",
   githubUrl: "https://github.com/lia-xim/seo-fanout.com",
   issuesUrl: "https://github.com/lia-xim/seo-fanout.com/issues",
   indexable: true,
