@@ -124,8 +124,8 @@ if (root) {
     );
     setLinkText(
       "[data-contextter-cta]",
-      "Nachfrage und bestehende Seiten in Contextter prüfen",
-      "Check demand and existing pages in Contextter",
+      "Nachfrage und bestehende Seiten in Crawl Foundry prüfen",
+      "Check demand and existing pages in Crawl Foundry",
       language,
     );
     const metricLabels = root.querySelectorAll<HTMLElement>(

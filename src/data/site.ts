@@ -11,7 +11,7 @@ export const site = {
     "Indexable public SEO research view connected browser-locally to AI Fanout, with no second provider request.",
   boundary:
     "The tool analyses only the transferred visible result and must not claim hidden queries, search demand, rankings, site coverage or citation probability.",
-  primaryProject: "Contextter (accepted)",
+  primaryProject: "Crawl Foundry (formerly Contextter; accepted)",
   githubUrl: "https://github.com/lia-xim/seo-fanout.com",
   issuesUrl: "https://github.com/lia-xim/seo-fanout.com/issues",
   indexable: true,
@@ -22,7 +22,7 @@ export const site = {
   operator: {
     name: "Matthias Ramahi",
     disclosure:
-      "SEO Fanout, AI Fanout and Contextter share an operator. They are connected workflows, not independent validation.",
+      "SEO Fanout, AI Fanout and Crawl Foundry share an operator. They are connected workflows, not independent validation.",
   },
   navigation: [
     { href: "/tool/", label: "Research view" },
