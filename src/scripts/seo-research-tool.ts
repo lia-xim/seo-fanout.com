@@ -38,8 +38,6 @@ if (root) {
   function localiseResult(language: string) {
     setText("[data-result-label]", "AI-Frage", "AI question", language);
     setText("[data-takeaway-label]", "Dein praktisches Ergebnis", "Your practical takeaway", language);
-    setText("[data-plan-label]", "Rechercheplan", "research plan", language);
-    setText("[data-plan-detail]", "Ein begrenztes Thema", "One bounded topic", language);
     setText("[data-package-label]", "Arbeitspakete", "work packages", language);
     setText("[data-package-detail]", "Konkrete Ergebnisse", "Actionable deliverables", language);
     setText("[data-domain-label]", "Quellendomains", "source domains", language);
@@ -47,8 +45,8 @@ if (root) {
     setText("[data-gap-label]", "Evidenzlücken", "evidence gaps", language);
     setText("[data-gap-detail]", "Müssen geprüft werden", "Require verification", language);
     setText("[data-packages-label]", "Arbeitspakete", "Work packages", language);
-    setText("[data-packages-title]", "Mach aus der Query-Liste konkrete Ergebnisse.", "Turn the query list into deliverables.", language);
-    setText("[data-packages-copy]", "Jedes Paket verbindet Queries mit demselben Recherchejob.", "Each package combines queries that belong to the same research job.", language);
+    setText("[data-packages-title]", "Was du als Nächstes recherchieren solltest.", "What to research next.", language);
+    setText("[data-packages-copy]", "Jedes Paket nennt ein Ergebnis und den dafür nötigen Beleg.", "Each package names one deliverable and the proof it needs.", language);
     setText("[data-source-label]", "Quellenpool", "Source pool", language);
     setText("[data-source-title]", "Nutze den Lauf als Startpunkt – nicht als Beweis.", "Use the run as a lead list—not as proof.", language);
     setText("[data-first-move-label]", "Erster Schritt", "First move", language);
@@ -57,9 +55,8 @@ if (root) {
     setText("[data-export-label]", "Nimm den Plan mit", "Take the plan with you", language);
     setText("[data-export-title]", "Setze die Recherche überall fort.", "Continue the research anywhere.", language);
     setText("[data-export-copy]", "Kopiere den Plan oder lade den vollständigen lokalen Datensatz.", "Copy the plan or download the complete local record.", language);
-    setText("[data-next-label]", "Optionale tiefere Evidenz", "Optional deeper evidence", language);
-    setText("[data-next-title]", "Prüfe Nachfrage und bestehende Seiten.", "Check demand and existing pages.", language);
-    setText("[data-workflow-copy]", "Nutze diesen Schritt nur, wenn du den Plan mit echter Suchnachfrage oder den bestehenden Seiten deiner Website abgleichen möchtest.", "Continue only if you want to compare this plan with real keyword demand or the pages already on your site.", language);
+    setText("[data-next-title]", "Brauchst du echte Nachfrage- oder Seitendaten?", "Need real demand or page evidence?", language);
+    setText("[data-workflow-copy]", "Nutze Crawl Foundry erst, wenn du den Plan mit deinen echten SEO-Daten vergleichen möchtest.", "Continue in Crawl Foundry when you are ready to compare the plan with your actual SEO data.", language);
     setText("[data-raw-summary]", "Übertragene Queries und Quellen-Scope anzeigen", "View the raw transferred queries and source scope", language);
     setText("[data-copy-brief]", "Rechercheplan kopieren", "Copy research plan", language);
     setText("[data-download-brief]", "JSON herunterladen", "Download JSON", language);
@@ -124,22 +121,18 @@ if (root) {
       title: string;
       deliverable: string;
       proof: string;
-      status: string;
       queries: string[];
     }, index: number) => {
       const item = add(packageList, "li");
       add(item, "span", String(index + 1).padStart(2, "0"), "package-number");
       const name = add(item, "div", "", "package-name");
       add(name, "h4", workPackage.title);
-      const queryList = add(name, "ul", "", "package-queries");
-      workPackage.queries.forEach((query) => add(queryList, "li", query));
       const deliverable = add(item, "dl", "", "package-detail");
       add(deliverable, "dt", copy("Ergebnis", "Deliverable", language));
       add(deliverable, "dd", workPackage.deliverable);
       const proof = add(item, "dl", "", "package-detail");
       add(proof, "dt", copy("Benötigter Beleg", "Proof required", language));
       add(proof, "dd", workPackage.proof);
-      add(item, "span", workPackage.status, "package-status");
     });
 
     const evidenceMix = root.querySelector("[data-evidence-mix]")!;
@@ -212,6 +205,7 @@ if (root) {
       body.append(row);
     }
 
+    status.dataset.state = "success";
     status.textContent = copy(
       "SEO-Rechercheplan lokal erstellt. Keine zweite AI-Anfrage.",
       "SEO research plan created locally. No second AI request.",
@@ -289,6 +283,7 @@ if (root) {
     try {
       render(decodeSeoResearchHandoff(encoded));
     } catch {
+      status.dataset.state = "error";
       status.textContent = "The transferred result was invalid, unsupported or too large. Start a fresh run on AI Fanout.";
     }
   } else if (exampleMode === "documented") {

@@ -219,14 +219,14 @@ dd { margin: 0; color: var(--body-text); font-size: 0.78rem; line-height: 1.55; 
 .error-sheet > p:last-of-type { max-width: 620px; margin: 2rem 0 0; color: var(--body-text); font-size: 1rem; line-height: 1.65; }
 .error-actions { display: flex; gap: 1.5rem; align-items: center; margin-top: 2rem; }
 
-.site-footer { width: min(var(--content-width), calc(100% - (var(--page-gutter) * 2))); padding: 2.5rem 0 3.5rem; margin: 2rem auto 0; border-top: 1px solid var(--line-strong); }
+.site-footer { width: min(var(--content-width), calc(100% - (var(--page-gutter) * 2))); padding: 2rem 0 2.5rem; margin: 2rem auto 0; border-top: 1px solid var(--line-strong); }
 .footer-topline, .footer-bottomline { display: flex; gap: 2rem; align-items: flex-start; justify-content: space-between; }
-.footer-topline { padding-bottom: 2rem; }
+.footer-topline { align-items: center; padding-bottom: 1.25rem; }
 .footer-brand { display: inline-flex; gap: 0.65rem; align-items: center; flex: 0 0 auto; text-decoration: none; }
 .footer-brand svg { width: 34px; fill: var(--white); stroke: var(--accent); stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8; }
 .footer-brand strong { font-size: 1rem; letter-spacing: -0.02em; }
 .footer-topline p { max-width: 670px; margin: 0; color: var(--muted); font-size: 0.72rem; line-height: 1.55; }
-.footer-bottomline { padding-top: 1.2rem; border-top: 1px solid var(--line); }
+.footer-bottomline { padding-top: 1rem; border-top: 1px solid var(--line); }
 .footer-bottomline span, .footer-bottomline a { color: var(--muted); font-size: 0.7rem; line-height: 1.5; }
 .footer-bottomline nav { display: flex; flex-wrap: wrap; gap: 0.45rem 1.25rem; justify-content: flex-end; }
 @media (max-width: 1100px) {
@@ -269,7 +269,7 @@ dd { margin: 0; color: var(--body-text); font-size: 0.78rem; line-height: 1.55; 
   .role-ledger dl { grid-column: 2; grid-template-columns: 1fr; }
   .decision-ledger dl { grid-template-columns: 1fr; }
   .action-band { align-items: start; flex-direction: column; }
-  .footer-topline, .footer-bottomline { flex-direction: column; }
+  .footer-topline, .footer-bottomline { align-items: flex-start; flex-direction: column; }
   .footer-bottomline nav { justify-content: flex-start; }
 }
 
@@ -490,11 +490,8 @@ dd { margin: 0; color: var(--body-text); font-size: 0.78rem; line-height: 1.55; 
 .secondary-link { border-color: var(--line-strong); color: var(--body-text); }
 .secondary-link:hover { border-color: var(--ink); background: var(--ink); }
 
-.footer-link-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(2rem, 6vw, 6rem); padding: 2rem 0; border-top: 1px solid var(--line); }
-.footer-link-grid > div { display: grid; align-content: start; gap: 0.65rem; }
-.footer-link-grid strong { margin-bottom: 0.2rem; font-size: 0.72rem; }
-.footer-link-grid a { color: var(--muted); font-size: 0.72rem; text-decoration: none; }
-.footer-bottomline > span:last-child { text-align: right; }
+.footer-links { display: flex; flex-wrap: wrap; gap: .7rem 1.4rem; padding: 1rem 0; border-top: 1px solid var(--line); }
+.footer-links a { color: var(--body-text); font-size: .72rem; font-weight: 650; text-decoration: none; }
 
 @media (max-width: 1100px) {
   .desktop-nav { gap: 1.5rem; }
@@ -525,7 +522,6 @@ dd { margin: 0; color: var(--body-text); font-size: 0.78rem; line-height: 1.55; 
   .lab-output-panel textarea { min-height: 330px; }
   .lab-method, .workflow-handoff, .relationship-disclosure { grid-template-columns: 1fr; }
   .lab-boundary, .lab-method > .text-link { grid-column: auto; }
-  .footer-link-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 620px) {
@@ -558,8 +554,7 @@ dd { margin: 0; color: var(--body-text); font-size: 0.78rem; line-height: 1.55; 
   .lab-method dl { grid-template-columns: 1fr; }
   .workflow-steps article { grid-template-columns: 44px minmax(0, 1fr); gap: 1rem; }
   .workflow-actions { align-items: stretch; flex-direction: column; }
-  .footer-link-grid { grid-template-columns: 1fr 1fr; gap: 2rem 1rem; }
-  .footer-bottomline > span:last-child { text-align: left; }
+  .footer-links { gap: .7rem 1.1rem; }
 }
 /* Final density and mobile comparison pass */
 @media (min-width: 1101px) {

@@ -111,6 +111,14 @@ check(
   "bounded work packages missing",
 );
 check(
+  (await page.locator(".research-metrics > div").count()) === 3,
+  "research summary should contain exactly three useful metrics",
+);
+check(
+  (await page.locator(".package-queries, .package-status").count()) === 0,
+  "work packages repeat raw queries or redundant status badges",
+);
+check(
   await page.getByText(/Research one comparison guide/u).isVisible(),
   "practical takeaway missing",
 );
