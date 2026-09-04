@@ -65,18 +65,18 @@
       <ol class="package-list" data-package-list></ol>
     </section>
 
-    <section class="source-pool" aria-labelledby="source-pool-title">
-      <div><p class="mono-label" data-source-label>Source pool</p><h3 id="source-pool-title" data-source-title>Use the run as a lead list—not as proof.</h3><p data-source-scope-note></p></div>
+    <details class="source-pool">
+      <summary><div><p class="mono-label" data-source-label>Source pool</p><h3 data-source-title>Use the run as a lead list—not as proof.</h3><p data-source-scope-note></p></div><span class="source-toggle" data-source-toggle>Inspect source roles</span></summary>
       <ul class="evidence-mix" data-evidence-mix></ul>
-    </section>
+    </details>
 
     <section class="completion-grid">
-      <div class="evidence-gaps"><p class="mono-label" data-gaps-label>Evidence still missing</p><h3 data-gaps-title>Verify these before publishing.</h3><ul class="unknown-list" data-unknown-list></ul></div>
+      <div class="evidence-gaps"><p class="mono-label" data-gaps-label>Evidence still missing</p><h3 data-gaps-title>Verify these before publishing.</h3><ul class="unknown-list" data-unknown-list></ul><p class="next-action-line"><strong data-first-move-label>First move</strong><span data-next-action></span></p></div>
       <div class="take-plan"><p class="mono-label" data-export-label>Take the plan with you</p><h3 data-export-title>Continue the research anywhere.</h3><p data-export-copy>Copy the plan or download the complete local record.</p><div class="result-actions"><button class="primary-action" type="button" data-copy-brief>Copy research plan</button><button class="secondary-action" type="button" data-download-brief>Download JSON</button></div></div>
     </section>
 
     <aside class="optional-workflow">
-      <div><p class="mono-label" data-next-label>Optional deeper evidence</p><h3 data-next-title>Check demand and existing pages.</h3><p data-next-action></p></div>
+      <div><p class="mono-label" data-next-label>Optional deeper evidence</p><h3 data-next-title>Check demand and existing pages.</h3><p data-workflow-copy>Continue only if you want to compare this plan with real keyword demand or the pages already on your site.</p></div>
       <a class="secondary-action" href="https://crawlfoundry.com/features/keyword-database?utm_source=seo-fanout.com&utm_medium=referral&utm_campaign=research_workflow" data-contextter-cta>Continue in Crawl Foundry <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 6l4 4-4 4"></path></svg></a>
       <p class="ownership-note">SEO Fanout, AI Fanout and Crawl Foundry are operated by Matthias Ramahi. This workflow connection is not independent validation.</p>
     </aside>
@@ -152,15 +152,23 @@
   .work-packages h3 { grid-column: 1; max-width: 16ch; margin: .4rem 0 0; font-size: clamp(2rem, 3vw, 3rem); letter-spacing: -.04em; line-height: 1.02; }
   .work-packages > header > p:last-child { grid-column: 2; grid-row: 1 / 3; max-width: 58ch; margin: 0; color: var(--muted); line-height: 1.65; }
   .package-list { margin: 0; padding: 0; border-top: 1px solid var(--line); list-style: none; }
-  .source-pool { display: grid; grid-template-columns: minmax(20rem, .8fr) minmax(0, 1.2fr); gap: clamp(2rem, 6vw, 7rem); padding: 2.5rem 0; border-block: 1px solid var(--line); }
+  .source-pool { padding: 2.25rem 0; border-block: 1px solid var(--line); }
+  .source-pool summary { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2rem; align-items: center; cursor: pointer; list-style: none; }
+  .source-pool summary::-webkit-details-marker { display: none; }
   .source-pool h3, .completion-grid h3, .optional-workflow h3 { margin: .45rem 0 .75rem; font-size: clamp(1.45rem, 2.3vw, 2.25rem); letter-spacing: -.035em; line-height: 1.08; }
-  .source-pool > div > p:last-child { margin: 0; color: var(--muted); font-size: .85rem; line-height: 1.6; }
+  .source-pool summary p:last-child { max-width: 72ch; margin: 0; color: var(--muted); font-size: .85rem; line-height: 1.6; }
+  .source-toggle { display: inline-flex; gap: .7rem; align-items: center; color: var(--accent); font-size: .78rem; font-weight: 750; white-space: nowrap; }
+  .source-toggle::after { content: "+"; font: 700 1rem/1 var(--mono); }
+  .source-pool[open] .source-toggle::after { content: "−"; }
+  .source-pool .evidence-mix { margin-top: 1.5rem; }
   .evidence-mix, .unknown-list { margin: 0; padding: 0; list-style: none; }
   .evidence-mix { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); }
   .completion-grid { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--line); }
   .completion-grid > div { padding: clamp(2rem, 4vw, 3.5rem); }
   .completion-grid > div + div { border-left: 1px solid var(--line); }
   .unknown-list { margin-top: 1.3rem; border-top: 1px solid var(--line); }
+  .next-action-line { display: grid; gap: .45rem; margin: 1.35rem 0 0; padding: 1rem 1.1rem; border-left: 2px solid var(--accent); background: var(--accent-soft); color: var(--body-text); font-size: .8rem; line-height: 1.55; }
+  .next-action-line strong { color: var(--accent); font: 700 .62rem/1.2 var(--mono); letter-spacing: .06em; text-transform: uppercase; }
   .take-plan { background: var(--surface); }
   .take-plan > p:not(.mono-label) { margin: 0; color: var(--muted); line-height: 1.6; }
   .research-result .result-actions { position: static; display: flex; gap: .75rem; margin-top: 1.5rem; }
@@ -204,7 +212,7 @@
     .transformation-preview li:not(:last-child)::after { display: none; }
     .documented-proof dl { display: grid; grid-template-columns: 1fr; }
     .documented-proof dl div { padding: .75rem 0; border-top: 1px solid var(--line); border-left: 0; }
-    .how-it-works > header, .how-it-works ol, .result-provenance, .research-metrics, .source-pool, .completion-grid { grid-template-columns: 1fr; }
+    .how-it-works > header, .how-it-works ol, .result-provenance, .research-metrics, .completion-grid { grid-template-columns: 1fr; }
     .how-it-works ol { margin-top: 2rem; }
     .how-it-works li { min-height: 0; padding: 1.25rem 0; }
     .how-it-works li + li { border-top: 1px solid var(--line); border-left: 0; }
@@ -221,7 +229,8 @@
     .work-packages { padding-top: 3.5rem; }
     .work-packages > header { grid-template-columns: 1fr; }
     .work-packages > header > p:last-child { min-width: 0; }
-    .source-pool { gap: 2rem; }
+    .source-pool summary { grid-template-columns: 1fr; gap: 1rem; }
+    .source-toggle { justify-content: space-between; width: 100%; padding-top: 1rem; border-top: 1px solid var(--line); }
     .evidence-mix { grid-template-columns: 1fr; }
     .completion-grid > div { padding: 2rem 0; }
     .completion-grid > div + div { border-top: 1px solid var(--line); border-left: 0; }

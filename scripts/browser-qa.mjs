@@ -123,6 +123,15 @@ check(
   "published fixture link missing",
 );
 check(
+  !(await page.locator("[data-evidence-mix]").isVisible()),
+  "source-role detail should start collapsed",
+);
+await page.getByText("Inspect 13 domains by source role", { exact: true }).click();
+check(
+  await page.getByText(/Primary, product & public records/u).isVisible(),
+  "source-role detail did not expand",
+);
+check(
   (await page.locator("[data-unknown-list] li").count()) >= 2,
   "validation gaps missing",
 );

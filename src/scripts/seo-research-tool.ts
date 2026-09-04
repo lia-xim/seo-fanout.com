@@ -51,6 +51,7 @@ if (root) {
     setText("[data-packages-copy]", "Jedes Paket verbindet Queries mit demselben Recherchejob.", "Each package combines queries that belong to the same research job.", language);
     setText("[data-source-label]", "Quellenpool", "Source pool", language);
     setText("[data-source-title]", "Nutze den Lauf als Startpunkt – nicht als Beweis.", "Use the run as a lead list—not as proof.", language);
+    setText("[data-first-move-label]", "Erster Schritt", "First move", language);
     setText("[data-gaps-label]", "Noch fehlende Evidenz", "Evidence still missing", language);
     setText("[data-gaps-title]", "Prüfe das vor der Veröffentlichung.", "Verify these before publishing.", language);
     setText("[data-export-label]", "Nimm den Plan mit", "Take the plan with you", language);
@@ -58,6 +59,7 @@ if (root) {
     setText("[data-export-copy]", "Kopiere den Plan oder lade den vollständigen lokalen Datensatz.", "Copy the plan or download the complete local record.", language);
     setText("[data-next-label]", "Optionale tiefere Evidenz", "Optional deeper evidence", language);
     setText("[data-next-title]", "Prüfe Nachfrage und bestehende Seiten.", "Check demand and existing pages.", language);
+    setText("[data-workflow-copy]", "Nutze diesen Schritt nur, wenn du den Plan mit echter Suchnachfrage oder den bestehenden Seiten deiner Website abgleichen möchtest.", "Continue only if you want to compare this plan with real keyword demand or the pages already on your site.", language);
     setText("[data-raw-summary]", "Übertragene Queries und Quellen-Scope anzeigen", "View the raw transferred queries and source scope", language);
     setText("[data-copy-brief]", "Rechercheplan kopieren", "Copy research plan", language);
     setText("[data-download-brief]", "JSON herunterladen", "Download JSON", language);
@@ -96,6 +98,11 @@ if (root) {
     root.querySelector<HTMLElement>("[data-package-count]")!.textContent = String(analysis.workPackages.length);
     root.querySelector<HTMLElement>("[data-domain-count]")!.textContent = String(analysis.sourceDomainCount);
     root.querySelector<HTMLElement>("[data-gap-count]")!.textContent = String(analysis.unknowns.length);
+    root.querySelector<HTMLElement>("[data-source-toggle]")!.textContent = copy(
+      `${analysis.sourceDomainCount} Domains nach Quellenrolle prüfen`,
+      `Inspect ${analysis.sourceDomainCount} domains by source role`,
+      language,
+    );
     root.querySelector<HTMLElement>("[data-working-title]")!.textContent = analysis.workingDirection.title;
     root.querySelector<HTMLElement>("[data-working-rationale]")!.textContent = analysis.workingDirection.rationale;
     root.querySelector<HTMLElement>("[data-result-summary]")!.textContent =

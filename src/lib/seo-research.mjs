@@ -386,8 +386,8 @@ const SOURCE_ROLES = [
   },
   {
     key: "primary",
-    de: "Primär- und Produktdokumentation",
-    en: "Primary & product documentation",
+    de: "Primärquellen, Produktdokumentation und öffentliche Register",
+    en: "Primary, product & public records",
     pattern:
       /(^|\.)(developers|docs|help|support)\.|(^|\.)(gov|eu)$|blog\.google$|openai\.com$|google\.com$/iu,
   },
@@ -506,11 +506,35 @@ const sourceDomain = (source) => {
   }
 };
 
-export function classifySourceRole(domain) {
+export function classifySourceRole(domain, firstPartyTokens = []) {
+  const domainLabels = String(domain).toLocaleLowerCase("en").split(".");
+  if (firstPartyTokens.some((token) => domainLabels.includes(token)))
+    return "primary";
   return (
     SOURCE_ROLES.find((role) => role.pattern.test(domain))?.key ?? "editorial"
   );
 }
+
+const firstPartyTokensFrom = (payload) => {
+  const questionCandidates =
+    payload.run.question.match(/\b[A-Z][A-Za-z0-9-]{3,}\b/gu) ?? [];
+  const queryText = payload.run.queries
+    .map((query) => query.text.toLocaleLowerCase("en"))
+    .join(" ");
+  return [
+    ...new Set(
+      questionCandidates
+        .filter((token) => token !== token.toLocaleUpperCase("en"))
+        .map((token) => token.toLocaleLowerCase("en"))
+        .filter((token) => !STOP_WORDS.has(token))
+        .filter(
+          (token) =>
+            (queryText.match(new RegExp(`\\b${token}\\b`, "gu")) ?? [])
+              .length >= 2,
+        ),
+    ),
+  ];
+};
 
 const sourceRoleLabel = (key, language) => {
   const role = SOURCE_ROLES.find((candidate) => candidate.key === key);
@@ -522,6 +546,7 @@ const sourceRoleLabel = (key, language) => {
 
 export function analyzeSeoHandoff(payload) {
   const language = payload.run.language;
+  const firstPartyTokens = firstPartyTokensFrom(payload);
   const categories = new Map();
   const termCounts = new Map();
   const domainCounts = new Map();
@@ -590,7 +615,7 @@ export function analyzeSeoHandoff(payload) {
   for (const source of allSources) {
     const domain = sourceDomain(source);
     if (!domain) continue;
-    const key = classifySourceRole(domain);
+    const key = classifySourceRole(domain, firstPartyTokens);
     const entry = sourceRoles.get(key) ?? {
       key,
       label: sourceRoleLabel(key, language),
@@ -605,7 +630,7 @@ export function analyzeSeoHandoff(payload) {
     .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label))
     .map((entry) => ({ ...entry, domains: [...entry.domains].slice(0, 4) }));
   for (const domain of payload.run.sourceDomains ?? []) {
-    const key = classifySourceRole(domain);
+    const key = classifySourceRole(domain, firstPartyTokens);
     const existing = evidenceMix.find((entry) => entry.key === key);
     if (existing) {
       if (!existing.domains.includes(domain) && existing.domains.length < 4)

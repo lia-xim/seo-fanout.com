@@ -72,6 +72,11 @@ test("turns the documented owner-run observation into three bounded work package
   assert.equal(fixture.run.sourceDocumentUrl, "https://ai-fanout.com/examples/openai-observations-2026-08-27.json");
   assert.equal(analysis.sourceCount, 0);
   assert.equal(analysis.sourceDomainCount, 13);
+  assert.equal(classifySourceRole("ahrefs.com", ["ahrefs", "semrush"]), "primary");
+  assert.deepEqual(
+    Object.fromEntries(analysis.evidenceMix.map((item) => [item.key, item.count])),
+    { editorial: 7, primary: 5, community: 1 },
+  );
   assert.equal(analysis.workingDirection.key, "one_comparison_guide");
   assert.match(analysis.workingDirection.title, /one comparison guide/u);
   assert.deepEqual(
