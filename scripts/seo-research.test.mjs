@@ -6,6 +6,7 @@ import {
   classifyQuery,
   classifySourceRole,
   decodeSeoResearchHandoff,
+  documentedSeoHandoff,
   exampleSeoHandoff,
 } from "../src/lib/seo-research.mjs";
 
@@ -64,6 +65,25 @@ test("creates transparent wording lenses without a model call", () => {
   assert.ok(analysis.unknowns.some((item) => item.includes("Search demand")));
 });
 
+test("turns the documented owner-run observation into three bounded work packages", () => {
+  const fixture = documentedSeoHandoff("en");
+  const analysis = analyzeSeoHandoff(fixture);
+  assert.equal(fixture.run.question, "Ahrefs vs Semrush for small business");
+  assert.equal(fixture.run.sourceDocumentUrl, "https://ai-fanout.com/examples/openai-observations-2026-08-27.json");
+  assert.equal(analysis.sourceCount, 0);
+  assert.equal(analysis.sourceDomainCount, 13);
+  assert.equal(analysis.workingDirection.key, "one_comparison_guide");
+  assert.match(analysis.workingDirection.title, /one comparison guide/u);
+  assert.deepEqual(
+    analysis.workPackages.map((workPackage) => workPackage.key),
+    ["comparison", "pricing", "fit"],
+  );
+  assert.deepEqual(
+    analysis.workPackages.map((workPackage) => workPackage.queries.length),
+    [1, 2, 1],
+  );
+});
+
 test("keeps a narrow provider fanout together as one working brief", () => {
   const fixture = exampleSeoHandoff("en");
   fixture.run.question = "AI search citations";
@@ -92,7 +112,7 @@ test("keeps a narrow provider fanout together as one working brief", () => {
   ];
   const analysis = analyzeSeoHandoff(fixture);
   assert.equal(analysis.workingDirection.key, "one_brief");
-  assert.match(analysis.workingDirection.title, /one evidence-led brief/u);
+  assert.match(analysis.workingDirection.title, /one research plan/u);
   assert.equal(analysis.queries.length, 3);
   assert.deepEqual(
     analysis.queries.map((query) => query.lensKey),

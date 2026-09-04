@@ -2,15 +2,17 @@
 
 ## Accepted purpose
 
-Build a standalone SEO research view that reuses one completed AI Fanout result without triggering a second AI or provider request.
+Build a standalone SEO research-plan view that reuses one completed AI Fanout result without triggering a second AI or provider request.
 
 ## Product contract
 
-The tool is deterministic and browser-local. AI Fanout sends only the already visible, selected query strings, visible source relationships, run-level sources and run metadata through a versioned URL-fragment handoff. SEO Fanout reads the fragment, removes it from the address bar and creates a working direction, concrete research tasks, proof requirements, a source-role mix and explicit validation gaps. Raw queries and source scope remain available as supporting evidence. It does not call a model, search provider, analytics service or paid API.
+The tool is deterministic and browser-local. AI Fanout sends only the already visible, selected query strings, visible source relationships, run-level sources and run metadata through a versioned URL-fragment handoff. SEO Fanout reads the fragment, removes it from the address bar and consolidates related queries into concrete work packages, deliverables, proof requirements, a source-role mix and explicit validation gaps. Raw queries and source scope remain available as supporting evidence. It does not call a model, search provider, analytics service or paid API.
 
 AI Fanout owns the provider request and the raw observed-result view. SEO Fanout owns the SEO-oriented reading of the same run. Contextter is the optional next workflow for search demand, current pages, Search Console, Site Audit and ongoing work. The three products share an operator and are not independent corroboration.
 
-The result must not be presented as hidden queries, keyword demand, ranking evidence, a content plan, site coverage or citation probability. Wording-based query lenses are transparent heuristics and remain user-reviewable.
+The result must not be presented as hidden queries, keyword demand, ranking evidence, a finished content plan, site coverage or citation probability. Wording-based work packages are transparent heuristics and remain user-reviewable.
+
+The primary public example is a reviewed owner-run OpenAI observation published by AI Fanout. It is documented as provider-exposed search behaviour, not as an independent benchmark. A separately labelled synthetic fallback exists only to demonstrate the interface.
 
 ## Domain and identity
 

@@ -145,8 +145,8 @@ pass(
   "tool schema creator incorrect",
 );
 pass(
-  (built.get("/beispiele/") || "").includes("1 synthetic interface example") &&
-    (built.get("/beispiele/") || "").includes("0 new public provider cases"),
+  (built.get("/beispiele/") || "").includes("1 documented owner-run observation") &&
+    (built.get("/beispiele/") || "").includes("1 synthetic fallback"),
   "truthful example state missing",
 );
 pass(
@@ -179,7 +179,8 @@ for (const [route, html] of built) {
   for (const m of html.matchAll(href)) {
     const u = m[1];
     if (!u.startsWith("/") || u.startsWith("//")) continue;
-    const [p, f] = u.split("#");
+    const [pathWithQuery, f] = u.split("#");
+    const p = pathWithQuery.split("?")[0];
     if (/\.[a-z0-9]+$/i.test(p)) {
       try {
         await access(join(dist, p.slice(1)));

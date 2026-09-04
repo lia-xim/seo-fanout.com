@@ -1,154 +1,264 @@
 <div data-seo-research-tool>
   <section class="research-hero" id="import-plan" aria-labelledby="research-title">
-    <h1 id="research-title">Turn one AI fanout into an SEO research brief.</h1>
-    <p>See what should be answered, which proof is still needed and what to validate before changing your website. The existing AI Fanout result is reused; nothing is searched again.</p>
-    <div class="hero-actions"><a class="primary-action" href="https://ai-fanout.com/#tool">Run one fanout on AI Fanout <span aria-hidden="true">→</span></a><button class="quiet-button" type="button" data-load-example>View a synthetic example</button></div>
-    <output class="handoff-status" data-handoff-status aria-live="polite">Waiting for a browser-local AI Fanout result.</output>
-  </section>
-
-  <section id="explorer">
-    <div class="research-empty" data-empty-state>
-      <div><h2>Leave with a usable brief—not a longer keyword list.</h2><p>The result converts one visible fanout into research tasks, evidence requirements and explicit unknowns.</p></div>
-      <ol><li><span>01</span><div><strong>Run AI Fanout once</strong><p>Choose the queries that matter in the provider-exposed result.</p></div></li><li><span>02</span><div><strong>Open the SEO brief</strong><p>The visible result travels only in your browser and is removed from the address bar.</p></div></li><li><span>03</span><div><strong>Act on the gaps</strong><p>Research the missing proof, then validate demand and existing-page fit before publishing.</p></div></li></ol>
+    <div class="hero-copy">
+      <h1 id="research-title">See what an AI investigated—and turn it into an SEO research plan.</h1>
+      <p>We group the visible queries into practical research tasks, show which evidence is missing and flag what you should not publish yet. No second AI request.</p>
+      <div class="hero-actions">
+        <button class="primary-action" type="button" data-load-example>Try the documented example</button>
+        <a class="secondary-action" href="https://ai-fanout.com/#tool">Run a real fanout <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 6l4 4-4 4"></path></svg></a>
+      </div>
+      <output class="handoff-status" data-handoff-status aria-live="polite">No result loaded. Use the documented example or open a completed AI Fanout run.</output>
     </div>
 
-    <article class="research-result" data-research-result hidden aria-labelledby="result-question">
-      <header class="research-result-head"><div><p class="mono-label" data-result-label>Browser-local SEO brief</p><h2 id="result-question" data-result-question></h2><p data-result-summary></p></div><dl><div><dt>Provider and model</dt><dd data-provider></dd></div><div><dt>Market</dt><dd data-market></dd></div><div><dt>Evidence state</dt><dd data-evidence></dd></div></dl></header>
-
-      <section class="takeaway" aria-labelledby="takeaway-title"><p class="mono-label" data-takeaway-label>Your practical takeaway</p><h3 id="takeaway-title" data-working-title></h3><p data-working-rationale></p></section>
-
-      <section class="research-metrics" aria-label="Research summary"><div><strong data-query-count>0</strong><span>queries to cover</span></div><div><strong data-task-count>0</strong><span>research tasks</span></div><div><strong data-source-count>0</strong><span>source links available</span></div><div><strong data-decision-state>Open</strong><span>publication decision</span></div></section>
-
-      <section class="brief-grid">
-        <div class="brief-tasks"><p class="mono-label" data-brief-label>Working brief</p><h3 data-brief-title>Answer these questions and bring the right proof.</h3><ol class="task-list" data-task-list></ol></div>
-        <aside class="evidence-panel"><p class="mono-label" data-evidence-mix-label>Evidence already in the run</p><h3 data-evidence-mix-title>What kind of sources are available?</h3><ul class="evidence-mix" data-evidence-mix></ul><p class="scope-note" data-source-scope-note></p></aside>
-      </section>
-
-      <section class="validation-grid">
-        <div><p class="mono-label" data-gaps-label>Before you change a page</p><h3 data-gaps-title>Three things this run still cannot decide.</h3><ul class="unknown-list" data-unknown-list></ul></div>
-        <div class="next-action"><p class="mono-label" data-next-label>Recommended next action</p><h3 data-next-title>Turn the fanout into verified inputs.</h3><p data-next-action></p><a class="primary-action" href="https://crawlfoundry.com/features/keyword-database?utm_source=seo-fanout.com&utm_medium=referral&utm_campaign=research_workflow" data-contextter-cta>Check demand and existing pages in Crawl Foundry <span aria-hidden="true">→</span></a><p class="ownership-note">SEO Fanout, AI Fanout and Crawl Foundry are operated by Matthias Ramahi. This workflow connection is not independent validation.</p></div>
-      </section>
-
-      <details class="raw-evidence"><summary data-raw-summary>Show the transferred queries and exact source scope</summary><div class="table-scroll" tabindex="0"><table><thead><tr><th>Exposed query</th><th>Research job</th><th>Source status</th><th>Visible domains</th></tr></thead><tbody data-query-table-body></tbody></table></div></details>
-
-      <section class="result-footer"><div><strong data-export-title>Take the brief with you</strong><p data-export-copy>Copy a readable brief or download the complete local evidence record.</p></div><div class="result-actions"><button type="button" data-copy-brief>Copy research brief</button><button type="button" data-download-brief>Download JSON</button><a href="https://ai-fanout.com/#tool">Run another fanout</a></div></section>
-      <aside class="limits"><strong>This result does not prove</strong><span>hidden searches</span><span>search volume</span><span>rankings</span><span>site coverage</span><span>citation probability</span></aside>
-    </article>
+    <ol class="transformation-preview" aria-label="From an AI question to an SEO research plan">
+      <li><span>01</span><strong>AI question</strong><code>Which SEO tool fits a small business?</code></li>
+      <li><span>02</span><strong>Exposed queries</strong><code>pricing · features · small-business review</code></li>
+      <li><span>03</span><strong>SEO work packages</strong><code>comparison · pricing · audience fit</code></li>
+      <li><span>04</span><strong>Evidence gaps</strong><code>current plans · first-party claims · real demand</code></li>
+    </ol>
   </section>
+
+  <section class="research-empty" data-empty-state>
+    <div class="documented-proof">
+      <div><span class="proof-mark" aria-hidden="true">✓</span><p><strong>Documented example</strong><span>Ahrefs vs Semrush for small business</span></p></div>
+      <dl>
+        <div><dt>Observed</dt><dd>27 August 2026</dd></div>
+        <div><dt>Provider</dt><dd>OpenAI API · GPT-5.6 Luna</dd></div>
+        <div><dt>Method</dt><dd>provider-native-search/1.0</dd></div>
+      </dl>
+      <a href="https://ai-fanout.com/examples/openai-observations-2026-08-27.json" rel="external">Inspect the published fixture <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 6l4 4-4 4"></path></svg></a>
+    </div>
+
+    <div class="how-it-works">
+      <header><h2>One run becomes a bounded research plan.</h2><p>The tool reorganises only what the provider already exposed. It does not infer hidden searches, demand or a finished content strategy.</p></header>
+      <ol>
+        <li><span>01</span><div><strong>Start with one AI result</strong><p>Open a completed AI Fanout run. The visible queries travel only in your browser.</p></div></li>
+        <li><span>02</span><div><strong>Build the research plan</strong><p>Related queries become concrete work packages with explicit proof requirements.</p></div></li>
+        <li><span>03</span><div><strong>Act on verified evidence</strong><p>Complete the plan, then validate demand and page ownership before publishing.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <article class="research-result" data-research-result hidden aria-labelledby="result-question">
+    <header class="research-result-head">
+      <div class="result-question"><p class="mono-label" data-result-label>AI question</p><h2 id="result-question" data-result-question></h2><p data-result-summary></p></div>
+      <dl class="result-provenance">
+        <div><dt>Provider and model</dt><dd data-provider></dd></div>
+        <div><dt>Market</dt><dd data-market></dd></div>
+        <div><dt>Observed</dt><dd data-observed></dd></div>
+        <div><dt>Evidence state</dt><dd data-evidence></dd></div>
+      </dl>
+      <a class="fixture-link" data-fixture-link hidden rel="external">Inspect source fixture <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 6l4 4-4 4"></path></svg></a>
+    </header>
+
+    <section class="takeaway" aria-labelledby="takeaway-title"><p class="mono-label" data-takeaway-label>Your practical takeaway</p><h3 id="takeaway-title" data-working-title></h3><p data-working-rationale></p></section>
+
+    <section class="research-metrics" aria-label="Research plan summary">
+      <div><strong>1</strong><span data-plan-label>research plan</span><small data-plan-detail>One bounded topic</small></div>
+      <div><strong data-package-count>0</strong><span data-package-label>work packages</span><small data-package-detail>Actionable deliverables</small></div>
+      <div><strong data-domain-count>0</strong><span data-domain-label>source domains</span><small data-domain-detail>From this run</small></div>
+      <div><strong data-gap-count>0</strong><span data-gap-label>evidence gaps</span><small data-gap-detail>Require verification</small></div>
+    </section>
+
+    <section class="work-packages" aria-labelledby="packages-title">
+      <header><p class="mono-label" data-packages-label>Work packages</p><h3 id="packages-title" data-packages-title>Turn the query list into deliverables.</h3><p data-packages-copy>Each package combines queries that belong to the same research job.</p></header>
+      <ol class="package-list" data-package-list></ol>
+    </section>
+
+    <section class="source-pool" aria-labelledby="source-pool-title">
+      <div><p class="mono-label" data-source-label>Source pool</p><h3 id="source-pool-title" data-source-title>Use the run as a lead list—not as proof.</h3><p data-source-scope-note></p></div>
+      <ul class="evidence-mix" data-evidence-mix></ul>
+    </section>
+
+    <section class="completion-grid">
+      <div class="evidence-gaps"><p class="mono-label" data-gaps-label>Evidence still missing</p><h3 data-gaps-title>Verify these before publishing.</h3><ul class="unknown-list" data-unknown-list></ul></div>
+      <div class="take-plan"><p class="mono-label" data-export-label>Take the plan with you</p><h3 data-export-title>Continue the research anywhere.</h3><p data-export-copy>Copy the plan or download the complete local record.</p><div class="result-actions"><button class="primary-action" type="button" data-copy-brief>Copy research plan</button><button class="secondary-action" type="button" data-download-brief>Download JSON</button></div></div>
+    </section>
+
+    <aside class="optional-workflow">
+      <div><p class="mono-label" data-next-label>Optional deeper evidence</p><h3 data-next-title>Check demand and existing pages.</h3><p data-next-action></p></div>
+      <a class="secondary-action" href="https://crawlfoundry.com/features/keyword-database?utm_source=seo-fanout.com&utm_medium=referral&utm_campaign=research_workflow" data-contextter-cta>Continue in Crawl Foundry <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 6l4 4-4 4"></path></svg></a>
+      <p class="ownership-note">SEO Fanout, AI Fanout and Crawl Foundry are operated by Matthias Ramahi. This workflow connection is not independent validation.</p>
+    </aside>
+
+    <details class="raw-evidence"><summary data-raw-summary>View the raw transferred queries and source scope</summary><div class="table-scroll" tabindex="0"><table><thead><tr><th>Exposed query</th><th>Research job</th><th>Source status</th><th>Visible domains</th></tr></thead><tbody data-query-table-body></tbody></table></div></details>
+    <aside class="limits"><strong>This result does not prove</strong><span>hidden searches</span><span>search demand</span><span>rankings</span><span>page ownership</span><span>citation probability</span></aside>
+  </article>
 </div>
 
 <script src="../scripts/seo-research-tool.ts"></script>
 
 <style>
-  [hidden]{display:none!important}.research-hero{padding:clamp(4.5rem,10vw,8rem) 0 clamp(3rem,7vw,5rem);border-bottom:1px solid var(--line)}.research-hero h1{max-width:13ch;margin:0 0 1.25rem;font-size:clamp(2.8rem,7vw,6.5rem);line-height:.93;letter-spacing:-.065em}.research-hero>p{max-width:67ch;color:var(--muted);font-size:clamp(1rem,2vw,1.25rem);line-height:1.65}.quiet-button{min-height:3rem;padding:.8rem 1rem;border:1px solid var(--line);background:transparent;color:var(--ink);font-weight:700;cursor:pointer}.handoff-status{display:block;margin-top:1.25rem;color:var(--muted);font:600 .72rem/1.5 var(--mono)}.research-empty{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2rem,7vw,8rem);padding:clamp(3rem,7vw,6rem) 0}.research-empty h2{max-width:13ch;margin:0 0 1rem;font-size:clamp(2rem,4vw,4rem)}.research-empty>div>p,.research-empty li p{color:var(--muted);line-height:1.55}.research-empty ol{margin:0;padding:0;border-top:1px solid var(--line);list-style:none}.research-empty li{display:grid;grid-template-columns:3rem 1fr;gap:1rem;padding:1.25rem 0;border-bottom:1px solid var(--line)}.research-empty li>span{color:var(--accent);font:700 .75rem/1 var(--mono)}.research-empty li p{margin:.35rem 0 0}.research-result{padding:0 0 5rem}.research-result-head{display:grid;grid-template-columns:1.25fr .75fr;gap:2rem;padding:3rem 0;border-bottom:1px solid var(--line)}.research-result-head h2{margin:.65rem 0;font-size:clamp(2rem,5vw,4.5rem);line-height:1}.research-result-head>div>p:last-child{max-width:65ch;color:var(--muted);line-height:1.6}.research-result-head dl{margin:0}.research-result-head dl div{padding:1rem 0;border-bottom:1px solid var(--line)}.research-result-head dt{color:var(--muted);font:.65rem/1.3 var(--mono);text-transform:uppercase}.research-result-head dd{margin:.45rem 0 0;font-weight:700}.takeaway{padding:clamp(2.5rem,6vw,5rem);background:var(--ink);color:var(--paper)}.takeaway h3{max-width:20ch;margin:.65rem 0 1rem;font-size:clamp(2rem,4.8vw,4.4rem);line-height:1;letter-spacing:-.045em}.takeaway>p:last-child{max-width:68ch;margin:0;color:#c5cfdf;line-height:1.65}.research-metrics{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line)}.research-metrics div{padding:1.5rem}.research-metrics div+div{border-left:1px solid var(--line)}.research-metrics strong{display:block;font-size:2rem}.research-metrics span{color:var(--muted);font-size:.75rem}.brief-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(2rem,6vw,6rem);padding:clamp(3rem,7vw,6rem) 0;border-bottom:1px solid var(--line)}.brief-grid h3,.validation-grid h3{margin:.6rem 0 1.5rem;font-size:clamp(1.6rem,3vw,2.8rem);line-height:1.08}.task-list,.evidence-mix,.unknown-list{margin:0;padding:0;list-style:none}.task-list{counter-reset:task}.task-list li{display:grid;grid-template-columns:2.5rem 1fr;gap:1rem;padding:1.4rem 0;border-top:1px solid var(--line);counter-increment:task}.task-list li::before{content:counter(task,decimal-leading-zero);color:var(--accent);font:700 .72rem/1.3 var(--mono)}.task-list strong{display:block;font-size:1.05rem}.task-query{margin:.45rem 0;color:var(--ink);font-size:1.05rem;line-height:1.5}.task-evidence{margin:.45rem 0 0;color:var(--muted);font-size:.8rem;line-height:1.55}.task-evidence b{color:var(--ink)}.evidence-panel{align-self:start;padding:1.5rem;border:1px solid var(--line);background:#f7f9fc}.evidence-mix li{padding:1rem 0;border-top:1px solid var(--line)}.evidence-mix strong{display:flex;justify-content:space-between;gap:1rem}.evidence-mix span{display:block;margin-top:.35rem;color:var(--muted);font:.68rem/1.5 var(--mono)}.scope-note{margin:1.5rem 0 0;padding-top:1rem;border-top:1px solid var(--line);color:var(--muted);font-size:.78rem;line-height:1.55}.validation-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,6rem);padding:clamp(3rem,7vw,6rem) 0;border-bottom:1px solid var(--line)}.unknown-list li{position:relative;padding:1rem 0 1rem 1.4rem;border-top:1px solid var(--line);color:var(--muted);line-height:1.55}.unknown-list li::before{position:absolute;left:0;color:var(--accent);content:"?";font:700 .75rem/1.6 var(--mono)}.next-action{padding:clamp(1.5rem,4vw,3rem);background:#edf3ff}.next-action>p:not(.mono-label){color:var(--muted);line-height:1.6}.next-action .primary-action{margin-top:1.25rem}.ownership-note{margin:1rem 0 0!important;padding-top:1rem;border-top:1px solid #cbd8ef;font-size:.7rem!important}.raw-evidence{padding:2rem 0;border-bottom:1px solid var(--line)}.raw-evidence summary{cursor:pointer;font-weight:800}.raw-evidence[open] summary{margin-bottom:1.5rem}.raw-evidence table{width:100%;border-collapse:collapse}.raw-evidence th,.raw-evidence td{padding:.9rem;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}.raw-evidence th{color:var(--muted);font:.65rem/1.3 var(--mono);text-transform:uppercase}.raw-evidence td{font-size:.78rem;line-height:1.5}.result-footer{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start;padding:3rem 0}.result-footer p{max-width:48ch;color:var(--muted)}.result-actions{display:flex;flex-wrap:wrap;gap:.65rem}.result-actions button,.result-actions a{display:flex;min-height:3rem;align-items:center;justify-content:center;padding:.8rem 1rem;border:1px solid var(--accent);background:transparent;color:var(--ink);font-weight:750;text-decoration:none;cursor:pointer}.limits{display:flex;flex-wrap:wrap;gap:.65rem;padding:1rem;border:1px solid var(--line)}.limits strong{margin-right:auto}.limits span{color:var(--muted);font:.68rem/1 var(--mono)}@media(max-width:760px){.research-empty,.research-result-head,.brief-grid,.validation-grid,.result-footer{grid-template-columns:1fr}.research-metrics{grid-template-columns:1fr 1fr}.research-metrics div:nth-child(3){border-left:0}.research-metrics div:nth-child(n+3){border-top:1px solid var(--line)}.takeaway{margin-inline:calc(50% - 50vw);padding-inline:max(1.25rem,calc((100vw - var(--container))/2))}.evidence-panel{padding:1.15rem}.table-scroll{overflow-x:auto}.raw-evidence table{min-width:47rem}.result-actions{display:grid}.limits strong{width:100%;margin-right:0}}
-</style>
-
-<style>
+  [hidden] { display: none !important; }
+  [data-seo-research-tool].has-result .research-hero { display: none; }
+  svg { width: 1.1rem; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8; }
+  .research-hero { display: grid; grid-template-columns: minmax(0, .95fr) minmax(33rem, 1.05fr); gap: clamp(3rem, 7vw, 8rem); align-items: center; padding: clamp(4rem, 7vw, 7rem) 0; border-bottom: 1px solid var(--line); }
+  .research-hero h1 { max-width: 12ch; margin: 0; font-size: clamp(3.2rem, 5.15vw, 5rem); font-weight: 720; letter-spacing: -.062em; line-height: .98; text-wrap: balance; }
+  .research-hero .hero-copy > p { max-width: 62ch; margin: 1.5rem 0 0; color: var(--body-text); font-size: clamp(1.03rem, 1.3vw, 1.2rem); line-height: 1.6; }
+  .hero-actions { gap: .8rem; margin-top: 2rem; }
+  .primary-action, .secondary-action { min-height: 3.25rem; border-radius: 0; }
+  button.primary-action { font: inherit; font-size: .94rem; }
+  .secondary-action { display: inline-flex; gap: .65rem; align-items: center; justify-content: center; padding: 0 1.35rem; border: 1px solid var(--accent); background: var(--white); color: var(--accent); font-size: .94rem; font-weight: 650; text-decoration: none; }
+  .secondary-action:hover { background: var(--accent-soft); color: var(--accent-hover); }
+  .handoff-status { display: block; max-width: 65ch; margin-top: 1.25rem; color: var(--muted); font: 600 .7rem/1.55 var(--mono); }
+  .transformation-preview { margin: 0; padding: 0; border-top: 1px solid var(--line); list-style: none; }
+  .transformation-preview li { position: relative; display: grid; grid-template-columns: 2.75rem 9.25rem minmax(0, 1fr); gap: 1rem; align-items: center; min-height: 6.1rem; padding: 1rem 0; border-bottom: 1px solid var(--line); }
+  .transformation-preview li:not(:last-child)::after { position: absolute; z-index: 2; bottom: -.7rem; left: 12.7rem; width: 1.35rem; height: 1.35rem; border: 1px solid var(--line); background: var(--white); color: var(--muted); content: "↓"; font: 600 .8rem/1.2rem var(--mono); text-align: center; }
+  .transformation-preview li > span { display: grid; width: 2.45rem; height: 2.45rem; border: 1px solid var(--accent); color: var(--accent); font: 700 .8rem/1 var(--mono); place-items: center; }
+  .transformation-preview strong { font-size: .95rem; }
+  .transformation-preview code { color: var(--body-text); font: .78rem/1.55 var(--mono); overflow-wrap: anywhere; }
+  .research-empty { padding-bottom: clamp(4rem, 7vw, 7rem); }
+  .documented-proof { display: grid; grid-template-columns: minmax(17rem, 1fr) auto auto; gap: 2rem; align-items: center; padding: 1.5rem 0; border-bottom: 1px solid var(--line); }
+  .documented-proof > div { display: flex; gap: 1rem; align-items: center; }
+  .proof-mark { display: grid; width: 2.5rem; height: 2.5rem; flex: 0 0 auto; border: 1px solid var(--accent); color: var(--accent); font-weight: 800; place-items: center; }
+  .documented-proof p { display: grid; gap: .25rem; margin: 0; }
+  .documented-proof p span { color: var(--muted); font-size: .82rem; }
+  .documented-proof dl { display: flex; margin: 0; }
+  .documented-proof dl div { padding: 0 1.4rem; border-left: 1px solid var(--line); }
+  .documented-proof dt, .result-provenance dt { color: var(--muted); font: .62rem/1.35 var(--mono); text-transform: uppercase; }
+  .documented-proof dd, .result-provenance dd { margin: .35rem 0 0; font-size: .78rem; font-weight: 700; }
+  .documented-proof > a, .fixture-link { display: inline-flex; gap: .55rem; align-items: center; color: var(--accent); font-size: .78rem; font-weight: 700; text-decoration: none; }
+  .how-it-works { padding-top: clamp(3.5rem, 6vw, 6rem); }
+  .how-it-works > header { display: grid; grid-template-columns: minmax(0, 1fr) minmax(22rem, .8fr); gap: clamp(2rem, 6vw, 7rem); align-items: end; }
+  .how-it-works h2 { max-width: 17ch; margin: 0; font-size: clamp(2.2rem, 4vw, 4rem); letter-spacing: -.045em; line-height: 1; }
+  .how-it-works header p { margin: 0; color: var(--muted); line-height: 1.65; }
+  .how-it-works ol { display: grid; grid-template-columns: repeat(3, 1fr); margin: 3rem 0 0; padding: 0; border-block: 1px solid var(--line); list-style: none; }
+  .how-it-works li { display: grid; grid-template-columns: 2.5rem 1fr; gap: 1rem; min-height: 10rem; padding: 1.5rem; }
+  .how-it-works li + li { border-left: 1px solid var(--line); }
+  .how-it-works li > span { color: var(--accent); font: 700 .75rem/1.4 var(--mono); }
+  .how-it-works li strong { font-size: 1rem; }
+  .how-it-works li p { margin: .65rem 0 0; color: var(--muted); font-size: .88rem; line-height: 1.6; }
+  .research-result { padding: clamp(2.5rem, 5vw, 4.5rem) 0 5rem; scroll-margin-top: 1rem; }
+  .research-result-head { display: grid; grid-template-columns: minmax(22rem, 1.2fr) minmax(30rem, 1fr); gap: 1.5rem 4rem; align-items: end; padding-bottom: 2rem; }
+  .result-question h2 { max-width: 18ch; margin: .55rem 0 .75rem; font-size: clamp(2.5rem, 4.5vw, 4.4rem); letter-spacing: -.055em; line-height: .98; }
+  .result-question > p:last-child { max-width: 63ch; margin: 0; color: var(--muted); line-height: 1.6; }
+  .result-provenance { display: grid; grid-template-columns: 1fr 1fr; margin: 0; border-top: 1px solid var(--line); }
+  .result-provenance div { min-width: 0; padding: 1rem 1rem 1rem 0; border-bottom: 1px solid var(--line); }
+  .result-provenance div:nth-child(even) { padding-left: 1rem; border-left: 1px solid var(--line); }
+  .fixture-link { grid-column: 2; justify-self: start; }
+  .mono-label { margin: 0; color: var(--accent); font: 700 .64rem/1.4 var(--mono); letter-spacing: .07em; text-transform: uppercase; }
+  .takeaway { padding: clamp(2.25rem, 4.2vw, 4.25rem); background: var(--ink); color: var(--white); }
+  .takeaway h3 { max-width: 26ch; margin: .7rem 0 1rem; color: var(--white); font-size: clamp(2.25rem, 4vw, 4rem); letter-spacing: -.048em; line-height: 1; }
+  .takeaway > p:last-child { max-width: 76ch; margin: 0; color: #d6deeb; line-height: 1.65; }
+  .research-metrics { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--line); }
+  .research-metrics div { min-height: 8rem; padding: 1.5rem; }
+  .research-metrics div + div { border-left: 1px solid var(--line); }
+  .research-metrics strong { display: block; color: var(--accent); font-size: 2rem; line-height: 1; }
+  .research-metrics span { display: block; margin-top: .65rem; font-size: .83rem; font-weight: 750; }
+  .research-metrics small { display: block; margin-top: .35rem; color: var(--muted); font-size: .7rem; }
+  .work-packages { padding: clamp(3.5rem, 6vw, 6rem) 0 2rem; }
+  .work-packages > header { display: grid; grid-template-columns: minmax(0, .7fr) minmax(28rem, 1.3fr); gap: .5rem 4rem; align-items: end; margin-bottom: 2rem; }
+  .work-packages > header .mono-label { grid-column: 1; }
+  .work-packages h3 { grid-column: 1; max-width: 16ch; margin: .4rem 0 0; font-size: clamp(2rem, 3vw, 3rem); letter-spacing: -.04em; line-height: 1.02; }
+  .work-packages > header > p:last-child { grid-column: 2; grid-row: 1 / 3; max-width: 58ch; margin: 0; color: var(--muted); line-height: 1.65; }
+  .package-list { margin: 0; padding: 0; border-top: 1px solid var(--line); list-style: none; }
+  .source-pool { display: grid; grid-template-columns: minmax(20rem, .8fr) minmax(0, 1.2fr); gap: clamp(2rem, 6vw, 7rem); padding: 2.5rem 0; border-block: 1px solid var(--line); }
+  .source-pool h3, .completion-grid h3, .optional-workflow h3 { margin: .45rem 0 .75rem; font-size: clamp(1.45rem, 2.3vw, 2.25rem); letter-spacing: -.035em; line-height: 1.08; }
+  .source-pool > div > p:last-child { margin: 0; color: var(--muted); font-size: .85rem; line-height: 1.6; }
+  .evidence-mix, .unknown-list { margin: 0; padding: 0; list-style: none; }
+  .evidence-mix { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); }
+  .completion-grid { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--line); }
+  .completion-grid > div { padding: clamp(2rem, 4vw, 3.5rem); }
+  .completion-grid > div + div { border-left: 1px solid var(--line); }
+  .unknown-list { margin-top: 1.3rem; border-top: 1px solid var(--line); }
+  .take-plan { background: var(--surface); }
+  .take-plan > p:not(.mono-label) { margin: 0; color: var(--muted); line-height: 1.6; }
+  .research-result .result-actions { position: static; display: flex; gap: .75rem; margin-top: 1.5rem; }
+  .research-result .result-actions button { min-height: 3.1rem; padding-inline: 1.2rem; border-radius: 0; }
+  .research-result .result-actions .primary-action { border-color: var(--accent); background: var(--accent); color: var(--white); }
+  .research-result .result-actions .primary-action:hover { border-color: var(--accent-hover); background: var(--accent-hover); color: var(--white); }
+  .optional-workflow { display: grid; grid-template-columns: 1fr auto; gap: 1rem 3rem; align-items: center; margin: 2rem 0; padding: 1.75rem; border: 1px dashed var(--line-strong); }
+  .optional-workflow h3 { margin-bottom: .35rem; }
+  .optional-workflow > div > p:last-child { max-width: 72ch; margin: 0; color: var(--muted); font-size: .83rem; line-height: 1.55; }
+  .optional-workflow .secondary-action { grid-column: 2; grid-row: 1; }
+  .ownership-note { grid-column: 1 / -1; margin: 0; color: var(--muted); font-size: .68rem; line-height: 1.5; }
+  .raw-evidence { padding: 1.4rem 0; border-block: 1px solid var(--line); }
+  .raw-evidence summary { cursor: pointer; font-weight: 750; }
+  .raw-evidence[open] summary { margin-bottom: 1.25rem; }
+  .raw-evidence table { width: 100%; border-collapse: collapse; }
+  .raw-evidence th, .raw-evidence td { padding: .8rem; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+  .raw-evidence th { color: var(--muted); font: .6rem/1.3 var(--mono); text-transform: uppercase; }
+  .raw-evidence td { font-size: .75rem; line-height: 1.5; }
+  .limits { display: flex; flex-wrap: wrap; gap: .65rem 1.25rem; padding: 1rem 0; }
+  .limits strong { margin-right: auto; }
+  .limits span { color: var(--muted); font: .65rem/1.4 var(--mono); }
+  @media (max-width: 1040px) {
+    .research-hero { grid-template-columns: 1fr; }
+    .research-hero h1 { max-width: 15ch; }
+    .transformation-preview li { grid-template-columns: 2.75rem 11rem minmax(0, 1fr); }
+    .transformation-preview li:not(:last-child)::after { left: 14.5rem; }
+    .documented-proof { grid-template-columns: 1fr; gap: 1rem; }
+    .documented-proof dl div:first-child { padding-left: 0; border-left: 0; }
+    .research-result-head, .work-packages > header { grid-template-columns: 1fr; }
+    .fixture-link, .work-packages > header .mono-label, .work-packages h3, .work-packages > header > p:last-child { grid-column: 1; grid-row: auto; }
+  }
   @media (max-width: 760px) {
-    .takeaway {
-      margin-inline: 0;
-      padding: 2rem 1.25rem;
-    }
-
-    .takeaway h3 {
-      font-size: clamp(2rem, 11vw, 3rem);
-    }
+    .research-hero { gap: 3rem; padding: 3.25rem 0 3rem; }
+    .research-hero h1 { max-width: 12ch; font-size: clamp(2.75rem, 12.7vw, 3.55rem); line-height: .98; }
+    .research-hero .hero-copy > p { font-size: 1rem; }
+    .hero-actions { display: grid; gap: .65rem; }
+    .hero-actions > * { width: 100%; }
+    .transformation-preview li { grid-template-columns: 2.35rem 1fr; gap: .7rem 1rem; min-height: 0; padding: 1.15rem 0; }
+    .transformation-preview li > span { grid-row: 1 / 3; width: 2.25rem; height: 2.25rem; }
+    .transformation-preview code { grid-column: 2; }
+    .transformation-preview li:not(:last-child)::after { display: none; }
+    .documented-proof dl { display: grid; grid-template-columns: 1fr; }
+    .documented-proof dl div { padding: .75rem 0; border-top: 1px solid var(--line); border-left: 0; }
+    .how-it-works > header, .how-it-works ol, .result-provenance, .research-metrics, .source-pool, .completion-grid { grid-template-columns: 1fr; }
+    .how-it-works ol { margin-top: 2rem; }
+    .how-it-works li { min-height: 0; padding: 1.25rem 0; }
+    .how-it-works li + li { border-top: 1px solid var(--line); border-left: 0; }
+    .research-result { padding-top: 2.5rem; }
+    .research-result-head { grid-template-columns: 1fr; gap: 1.5rem; }
+    .result-question h2 { font-size: clamp(2.35rem, 11vw, 3.15rem); }
+    .result-provenance div:nth-child(even) { padding-left: 0; border-left: 0; }
+    .takeaway { padding: 2rem 1.35rem; }
+    .takeaway h3 { max-width: 19ch; font-size: clamp(2rem, 9.5vw, 2.75rem); line-height: 1.02; }
+    .research-metrics { grid-template-columns: 1fr 1fr; }
+    .research-metrics div { min-height: 7rem; padding: 1.2rem; }
+    .research-metrics div:nth-child(3) { border-left: 0; }
+    .research-metrics div:nth-child(n + 3) { border-top: 1px solid var(--line); }
+    .work-packages { padding-top: 3.5rem; }
+    .work-packages > header { grid-template-columns: 1fr; }
+    .work-packages > header > p:last-child { min-width: 0; }
+    .source-pool { gap: 2rem; }
+    .evidence-mix { grid-template-columns: 1fr; }
+    .completion-grid > div { padding: 2rem 0; }
+    .completion-grid > div + div { border-top: 1px solid var(--line); border-left: 0; }
+    .research-result .result-actions { display: grid; }
+    .optional-workflow { grid-template-columns: 1fr; }
+    .optional-workflow .secondary-action { grid-column: 1; grid-row: auto; width: 100%; }
+    .table-scroll { overflow-x: auto; }
+    .raw-evidence table { min-width: 45rem; }
+    .limits strong { width: 100%; margin-right: 0; }
   }
 </style>
 
 <style is:global>
-  [data-seo-research-tool] .task-list li {
-    display: grid;
-    grid-template-columns: 2.5rem 1fr;
-    gap: 1rem;
-    padding: 1.4rem 0;
-    border-top: 1px solid var(--line);
-    counter-increment: task;
+  [data-seo-research-tool] .package-list > li { display: grid; grid-template-columns: 2.5rem minmax(11rem, .75fr) minmax(13rem, 1.2fr) minmax(13rem, 1fr) auto; gap: 1.25rem; align-items: start; padding: 1.5rem 0; border-bottom: 1px solid var(--line); }
+  [data-seo-research-tool] .package-number { display: grid; width: 2rem; height: 2rem; border: 1px solid var(--accent); color: var(--accent); font: 700 .72rem/1 var(--mono); place-items: center; }
+  [data-seo-research-tool] .package-name h4 { margin: 0; font-size: 1rem; }
+  [data-seo-research-tool] .package-queries { display: grid; gap: .35rem; margin: .65rem 0 0; padding: 0; list-style: none; }
+  [data-seo-research-tool] .package-queries li { color: var(--body-text); font: .68rem/1.45 var(--mono); overflow-wrap: anywhere; }
+  [data-seo-research-tool] .package-detail { margin: 0; }
+  [data-seo-research-tool] .package-detail dt { margin-bottom: .4rem; color: var(--muted); font: .6rem/1.3 var(--mono); text-transform: uppercase; }
+  [data-seo-research-tool] .package-detail dd { margin: 0; color: var(--body-text); font-size: .8rem; line-height: 1.55; }
+  [data-seo-research-tool] .package-status { padding: .45rem .65rem; border: 1px solid #d3a72c; color: #735200; font: 700 .62rem/1.2 var(--mono); white-space: nowrap; }
+  [data-seo-research-tool] .evidence-mix li { padding: .9rem 1rem .9rem 0; border-bottom: 1px solid var(--line); }
+  [data-seo-research-tool] .evidence-mix li:nth-child(even) { padding-left: 1rem; border-left: 1px solid var(--line); }
+  [data-seo-research-tool] .evidence-mix strong { display: flex; justify-content: space-between; gap: 1rem; font-size: .78rem; }
+  [data-seo-research-tool] .evidence-mix strong b { color: var(--accent); }
+  [data-seo-research-tool] .evidence-mix li > span { display: block; margin-top: .35rem; color: var(--muted); font: .62rem/1.45 var(--mono); overflow-wrap: anywhere; }
+  [data-seo-research-tool] .unknown-list li { position: relative; padding: .9rem 0 .9rem 1.5rem; border-bottom: 1px solid var(--line); color: var(--body-text); font-size: .82rem; line-height: 1.55; }
+  [data-seo-research-tool] .unknown-list li::before { position: absolute; left: 0; color: var(--accent); content: "→"; font-family: var(--mono); }
+  @media (max-width: 1040px) {
+    [data-seo-research-tool] .package-list > li { grid-template-columns: 2.5rem minmax(10rem, .8fr) 1fr 1fr; }
+    [data-seo-research-tool] .package-status { grid-column: 2; width: max-content; }
   }
-
-  [data-seo-research-tool] .task-list li::before {
-    color: var(--accent);
-    content: counter(task, decimal-leading-zero);
-    font: 700 0.72rem/1.3 var(--mono);
-  }
-
-  [data-seo-research-tool] .task-list strong {
-    display: block;
-    font-size: 1.05rem;
-  }
-
-  [data-seo-research-tool] .task-query {
-    margin: 0.45rem 0;
-    color: var(--ink);
-    font-size: 1.05rem;
-    line-height: 1.5;
-  }
-
-  [data-seo-research-tool] .task-evidence {
-    margin: 0.45rem 0 0;
-    color: var(--muted);
-    font-size: 0.8rem;
-    line-height: 1.55;
-  }
-
-  [data-seo-research-tool] .task-evidence b {
-    color: var(--ink);
-  }
-
-  [data-seo-research-tool] .evidence-mix li {
-    padding: 1rem 0;
-    border-top: 1px solid var(--line);
-  }
-
-  [data-seo-research-tool] .evidence-mix strong {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: baseline;
-    gap: 1rem;
-  }
-
-  [data-seo-research-tool] .evidence-mix strong span {
-    margin: 0;
-    color: var(--ink);
-    font: inherit;
-  }
-
-  [data-seo-research-tool] .evidence-mix strong b {
-    color: var(--accent);
-    font-size: 1.1rem;
-  }
-
-  [data-seo-research-tool] .evidence-mix li > span {
-    display: block;
-    margin-top: 0.45rem;
-    color: var(--muted);
-    font: 0.68rem/1.55 var(--mono);
-  }
-
-  [data-seo-research-tool] .unknown-list li {
-    position: relative;
-    padding: 1rem 0 1rem 1.4rem;
-    border-top: 1px solid var(--line);
-    color: var(--muted);
-    line-height: 1.55;
-  }
-
-  [data-seo-research-tool] .unknown-list li::before {
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    content: "?";
-    font: 700 0.75rem/1.6 var(--mono);
-  }
-</style>
-
-<style>
-  .takeaway h3 {
-    color: var(--white);
-  }
-
-  .research-result .result-actions {
-    position: static;
-    inset: auto;
+  @media (max-width: 760px) {
+    [data-seo-research-tool] .package-list > li { grid-template-columns: 2.3rem 1fr; gap: 1rem; }
+    [data-seo-research-tool] .package-name, [data-seo-research-tool] .package-detail, [data-seo-research-tool] .package-status { grid-column: 2; }
+    [data-seo-research-tool] .package-status { margin-top: -.25rem; }
+    [data-seo-research-tool] .evidence-mix li:nth-child(even) { padding-left: 0; border-left: 0; }
   }
 </style>

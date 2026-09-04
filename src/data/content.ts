@@ -151,7 +151,7 @@ export const guides: ContentEntry[] = [
         ],
       },
     ],
-    next: { label: "Run a page decision", href: "/tool/#explorer" },
+    next: { label: "Stress-test a page decision", href: "/lab/" },
   },
 ];
 
@@ -187,7 +187,7 @@ export const fieldNotes: ContentEntry[] = [
         ],
       },
     ],
-    next: { label: "Use the decision tool", href: "/tool/#explorer" },
+    next: { label: "Stress-test a page decision", href: "/lab/" },
   },
   {
     slug: "how-to-compare-ai-answers-without-guessing",
@@ -229,11 +229,11 @@ export const fieldNotes: ContentEntry[] = [
         heading: "Keep the two product roles separate",
         paragraphs: [
           "AI Fanout is the separate upstream workspace for planning branches and public-answer evidence. SEO Fanout decides how those inputs should change a real page set. Both share the same operator, so neither is independent validation of the other.",
-          "If you already have an AI Fanout export, import it locally and complete the inventory review here. If you only need to compare provider outputs, stay in the upstream evidence workflow.",
+          "If you already have a completed AI Fanout result, open its SEO research plan directly and complete the inventory review here. If you only need to compare provider outputs, stay in the upstream evidence workflow.",
         ],
       },
     ],
-    next: { label: "Import branches into a page decision", href: "/tool/#import-plan" },
+    next: { label: "Open the SEO research plan", href: "/tool/" },
   },
   {
     slug: "what-a-no-page-decision-looks-like",

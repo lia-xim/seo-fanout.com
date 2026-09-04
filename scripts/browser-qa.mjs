@@ -99,20 +99,28 @@ check(
 await page.goto(new URL("/tool/", baseUrl).toString(), {
   waitUntil: "networkidle",
 });
-await page.getByRole("button", { name: "View a synthetic example" }).click();
+await page.getByRole("button", { name: "Try the documented example" }).click();
 check(
   await page
-    .getByText("Which SEO tools suit a small business?", { exact: true })
+    .getByRole("heading", { name: "Ahrefs vs Semrush for small business" })
     .isVisible(),
-  "synthetic research result missing",
+  "documented research result missing",
 );
 check(
-  (await page.locator("[data-task-list] li").count()) === 5,
-  "actionable research tasks missing",
+  (await page.locator("[data-package-list] > li").count()) === 3,
+  "bounded work packages missing",
 );
 check(
-  await page.getByText(/Use one master brief/u).isVisible(),
+  await page.getByText(/Research one comparison guide/u).isVisible(),
   "practical takeaway missing",
+);
+check(
+  await page.getByText("13", { exact: true }).isVisible(),
+  "documented source-domain count missing",
+);
+check(
+  await page.getByRole("link", { name: /Inspect source fixture/u }).isVisible(),
+  "published fixture link missing",
 );
 check(
   (await page.locator("[data-unknown-list] li").count()) >= 2,
@@ -123,7 +131,7 @@ const [jsonDownload] = await Promise.all([
   page.getByRole("button", { name: "Download JSON" }).click(),
 ]);
 check(
-  jsonDownload.suggestedFilename().startsWith("seo-fanout-research-"),
+  jsonDownload.suggestedFilename().startsWith("seo-fanout-research-plan-"),
   "research JSON export missing",
 );
 

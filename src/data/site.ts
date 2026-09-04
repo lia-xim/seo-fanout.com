@@ -2,11 +2,11 @@ export const site = {
   domain: "seo-fanout.com",
   origin: "https://seo-fanout.com",
   language: "en",
-  title: "SEO Query Fanout Research",
+  title: "SEO Fanout Research Plan",
   description:
-    "A browser-local SEO brief from one AI query fanout run, with concrete research tasks, proof requirements and explicit validation gaps.",
+    "Turn provider-exposed AI fanout queries into grouped SEO work packages, proof requirements and explicit validation gaps without another AI request.",
   purpose:
-    "Translate one already completed AI Fanout run into a transparent SEO research brief without a second model or provider request.",
+    "Translate one already completed AI Fanout run into a transparent SEO research plan without a second model or provider request.",
   status:
     "Indexable public SEO research view connected browser-locally to AI Fanout, with no second provider request.",
   boundary:
